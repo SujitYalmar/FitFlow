@@ -1,0 +1,384 @@
+ <!DOCTYPE html>
+ <html lang="en" xmlns:th="http://www.thymeleaf.org"
+ 	th:replace="base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fitness webapplication</title>
+
+    <!-- Font Awesome Icons -->
+    
+    
+
+</head>
+<section>
+<body>
+
+    <!----------------------------- Main Site Section ------------------------------>
+
+    <main>
+<section class="container">
+	    <link rel="stylesheet" href="./css/all.css">
+
+	<!--Google Font-->
+	    <link rel="preconnect" href="https://fonts.gstatic.com">
+	    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+	    <!-- --------- Owl-Carousel ------------------->
+	    <link rel="stylesheet" href="./css/owl.carousel.min.css">
+	    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
+
+	    <!-- ------------ AOS Library ------------------------- -->
+	    <link rel="stylesheet" href="./css/aos.css">
+
+	    <!-- Custom Style   -->
+	    <link rel="stylesheet" href="./css/style.css">
+	   
+	    <style type="text/css">
+
+	      h2 span{
+	        color: red;
+	      }
+
+	      .team{
+	        font-size: 30px;
+	      }
+	      .team span{
+	        color: red;
+	      }
+	      .team1{
+	        color: black;
+	        text-align: center;
+	        margin-right: 14rem;
+	      }
+	      .testimonial {
+	  background-color: white;
+	  text-align: center;
+	  padding: 30px 30px 50px;
+	  margin: 100px 15px 420px;
+	  position: relative;
+	}
+
+	.testimonial::before,
+	.testimonial::after {
+	  content: "";
+	  border-top: 40px solid white;
+	  border-right: 125px solid transparent;
+	  position: absolute;
+	  bottom: -40px;
+	  left: 0;
+	}
+
+	.testimonial::after {
+	  border-right: none;
+	  border-left: 125px solid transparent;
+	  left: auto;
+	  right: 0;
+	}
+
+	.testimonial .icon {
+	  display: inline-block;
+	  font-size: 80px;
+	  color: #016d9b;
+	  margin-bottom: 20px;
+	  opacity: 0.6;
+	}
+
+	.testimonial .description {
+	  font-size: 14px;
+	  color: #777;
+	  text-align: justify;
+	  margin-bottom: 30px;
+	  opacity: 0.9;
+	}
+
+	.testimonial .testimonial-content {
+	  width: 100%;
+	  left: 0;
+	  position: absolute;
+	}
+
+	.testimonial .pic {
+	  display: inline-block;
+	  border: 4px solid white;
+	  border-radius: 50%;
+	  box-shadow: 0 0 2px 2px #016d9b;
+	  overflow: hidden;
+	  z-index: 1;
+	  position: relative;
+	}
+
+	.testimonial .pic img {
+	  width: 100%;
+	  height: auto;
+	}
+
+	.testimonial .name {
+	  font-size: 25px;
+	  font-weight: bold;
+	  color: white;
+	  text-transform: capitalize;
+	  margin: 10px 0 5px 0;
+	}
+
+	.testimonial .title {
+	  display: block;
+	  font-size: 19px;
+	  color: #ffd9b8;
+	}
+
+	.owl-controls {
+	  margin-top: 20px;
+	}
+
+	.owl-pagination {
+	  display: flex;
+	  justify-content: center;
+	}
+
+	.owl-page {
+	  height: 10px;
+	  width: 40px;
+	  background-color: rgba(255, 255, 255, 0.2);
+	  border-radius: 10%;
+	}
+
+	.owl-page:hover,
+	.owl-page.active {
+	  background-color: rgba(255, 255, 255, 0.3);
+	}
+
+	.owl-page:not(first-item) {
+	  margin-left: 10px;
+	}
+
+	*{box-sizing:border-box;
+	  margin:0;
+	}
+
+	.mains{
+	  
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  flex-direction: column;
+	  font-family: 'Montserrat', sans-serif;
+	  font-size:10px;
+	  height: 100vh;
+	  margin: -20px 0 20px;
+	}
+
+	.container123 {
+	  
+	  background-color: white;
+	  border-radius: 5px;
+	    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+	      0 10px 10px rgba(0,0,0,0.22);
+	  position: relative;
+	  overflow: hidden;
+	  margin:auto;
+	  width: 768px;
+	  max-width: 100%;
+	  min-height: 540px;
+	        min-width:370px;
+	}
+	h2{
+	  font-size:2rem;
+	  margin-bottom:1rem;
+	}
+	.form-container {
+	  display:flex;
+	}
+	.left-container {
+	  flex:1;
+	  height:480px;
+	  background-color:teal;
+	}
+	.right-container {
+	  display:flex;
+	  flex:1;
+	  height:460px;
+	  background-color: white;
+	  justify-content:center;
+	  align-items:center;
+	}
+	.left-container {
+	  display:flex;
+	  flex:1;
+	  height:480px;
+	  justify-content:center;
+	  align-items:center;
+	    color:white;
+	}
+	.left-container p {
+	  font-size:0.9rem;
+	}
+	.right-inner-container {
+	  width:70%;
+	  height:80%;
+	  text-align:center;
+	}
+	.left-inner-container {
+	  height:50%;
+	  width:80%;
+	  text-align:center;
+	  line-height:5px;
+	}
+	input, textarea {
+	  background-color: #eee;
+	  border: none;
+	  padding: 12px 15px;
+	  margin: 8px 0;
+	  width: 100%;
+	  font-size:0.8rem;
+	}
+	input:focus, textarea:focus{
+	  outline:1px solid teal;
+	}
+	button {
+	  border-radius: 20px;
+	  border: 1px solid #00b4cf;
+	  background:linear-gradient(to right, #4facfe 0%,#00f2fe 100%);
+	  color: #FFFFFF;
+	  font-size: 12px;
+	  font-weight: bold;
+	  padding: 12px 45px;
+	  letter-spacing: 1px;
+	  text-transform: uppercase;
+	  transition: transform 80ms ease-in;
+	  cursor:pointer;
+	}
+
+	button:hover {
+	  background:linear-gradient(to right, #00f2fe 0%,#4facfe 100%);
+	}
+	.btn-btn-primary{
+	background-color:#ee82ee;
+	}
+	@media only screen and (max-width: 600px) {
+	  .left-container{
+	    display: none;
+	  }
+	  .lg-view {
+	    display:none;  
+	  }
+	  
+	}
+	@media only screen and (min-width: 600px) {
+	  .sm-view {
+	    display:none;  
+	  }
+	}
+	form p {
+	  text-align:left;
+	}
+
+
+	    
+
+
+	    </style>
+
+
+	<!--Google Font-->
+	    <link rel="preconnect" href="https://fonts.gstatic.com">
+	    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+	    <!-- --------- Owl-Carousel ------------------->
+	    <link rel="stylesheet" href="./css/owl.carousel.min.css">
+	    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
+
+	    <!-- ------------ AOS Library ------------------------- -->
+	    <link rel="stylesheet" href="./css/aos.css">
+
+	    <!-- Custom Style   -->
+	    <link rel="stylesheet" href="./css/style.css">
+	   
+	    
+
+
+            <div class="site-content">
+  
+                <aside class="sidebar">
+                    <div class="category" data-aos="fade-left" data-aos-delay="200">
+                        <h2><span>HEALTH</span> CALCULATORS</h2>
+                             
+                        <ul class="category-list">
+                            <li class="list-items" data-aos="fade-right" data-aos-delay="100">
+                                <a href="calorie" style="margin-left:25rem;">Calorie Calculator</a>
+                              
+                            </li>
+                            <li class="list-items" data-aos="fade-right" data-aos-delay="200">
+                                <a href="bmi_calculator" style="margin-left:24rem;">BMI(Body Mass Index)</a>
+                                
+                            </li>
+                            <li class="list-items" data-aos="fade-right" data-aos-delay="300">
+                                <a href="bmr" style="margin-left:22rem;">BMR(Basal Metabolic Rate)</a>
+                          </li>
+                            <br>
+                             <h2><span>Search</span>Diet</h2>
+                           <li class="list-items" data-aos="fade-right" data-aos-delay="500">
+                              <a href="recipe" style="margin-left:29rem;">Search</a>
+                              
+                            </li>
+                            <br>
+                            <br>
+                            <br>
+
+
+   
+
+
+
+  </div>
+              
+                </aside>
+            </div>
+        </section>
+
+       <br>
+       <br>
+       <br>
+
+    <!-- --------------------------- Footer ---------------------------------------- -->
+<body class="footer-body">
+    <footer>
+        <div class="footer-content">
+            <div class="footer-content" data-aos="fade-right" data-aos-delay="200">
+            
+                <h3>Follow Us</h3>
+                <h4>On Social Media</h4>
+                
+                <div class="links"align="center">
+                  <a1 href="#"><i class="fab fa-facebook-f"></i></a1>
+                    <a2 href="#"><i class="fab fa-twitter"></i></a2>
+                    <a3 href="#"><i class="fab fa-instagram"></i></a3>
+                    <a4 href="#"><i class="fab fa-youtube"></i></a4>
+                </div>
+                </div>
+                
+        <div class="footer-bottom">
+            <h4 style="color:#838b8b;"> Copyright ©2024 All rights are reserved |
+             </h4>
+     </div>
+     
+                
+    </footer>
+</body>
+    <!-- -------------x------------- Footer --------------------x------------------- -->
+
+    <!-- Jquery Library file -->
+    <script src="./js/Jquery3.4.1.min.js"></script>
+
+    <!-- --------- Owl-Carousel js ------------------->
+    <script src="./js/owl.carousel.min.js"></script>
+
+    <!-- ------------ AOS js Library  ------------------------- -->
+    <script src="./js/aos.js"></script>
+
+    <!-- Custom Javascript file -->
+    <script src="./js/main.js"></script>
+
+     <script src="./js/home.js"></script>
+</body>
+</section>
+</html>

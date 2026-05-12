@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fitness webapplication</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="./css/all.css">
+
+<!--Google Font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <!-- --------- Owl-Carousel ------------------->
+    <link rel="stylesheet" href="./css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
+
+    <!-- ------------ AOS Library ------------------------- -->
+    <link rel="stylesheet" href="./css/aos.css">
+
+    <!-- Custom Style   -->
+    <link rel="stylesheet" href="./css/style.css">
+   
+    
+   <style>
+    .container1{
+    background-color:#e0eeee;
+    height:82vh;
+    margin-left:10rem;
+    margin-right:10rem;
+    border-radius:20px;
+    }
+    
+    
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+
+.show-btn, .container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input[type="checkbox"]{
+  display: none;
+}
+.container{
+margin-left:-0.3rem;
+  display: none;
+  background: linear-gradient(to right, #4facfe 0%,#00f2fe 100%);;
+  width: 410px;
+  padding: 30px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+#show:checked ~ .container{
+  display: block;
+}
+.container .close-btn{
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.container .close-btn:hover{
+  color: #3498db;
+}
+.container .text{
+  text-align: center;
+}
+
+ 
+ .gif img{
+ width:380px;
+ height:320px;
+ margin-top:2rem;
+ margin-left:18rem;
+ 
+ }
+ 
+ .skp-bk .btn{
+ margin-top:0rem;
+ margin-left:25.7rem;
+ background: linear-gradient(to right, #4facfe 0%,#00f2fe 100%);
+  border-radius:20px;
+ font-size:20px;
+ padding-top:0.2rem;
+ padding-bottom:0.2rem;
+ padding-left:2.5rem;
+ padding-right:2.5rem;
+
+ }
+ 
+    
+ .bck-btn{
+ margin-left:2rem;
+ font-size:25px;
+ }
+ 
+ 
+ .skp-bk .a1{
+ margin-left:35rem;
+  font-size:25px;
+ }
+ 
+  .skp-bk .a2{
+ margin-left:-14rem;
+  font-size:25px;
+ }
+ 
+
+  
+  @media only screen and (max-width: 520px){
+    .container1{
+    margin-left:2rem;
+    margin-right:2rem;
+    
+    }
+ 
+ 
+
+ .skp-bk .btn{
+ margin-left:7.5rem;
+
+ }
+ 
+ .bck-btn{
+font-size:20px;
+
+}
+
+
+.gif img{
+ width: 300px;
+  height: 300px;
+margin-left:2.2rem;
+}
+
+.skp-bk .a1{
+ margin-left:18rem;
+  font-size:25px;
+ }
+ 
+  .skp-bk .a2{
+ margin-left:-15rem;
+  font-size:25px;
+ }
+  }
+    </style>
+    
+
+</head>
+
+<body>
+
+   
+<br>
+<body>
+<div class="bck-btn">
+<a href="index3">
+<i class="fa fa-arrow-circle-left"></i>Back</a>
+</div>
+<br>
+    <!-- ------------x---------------  Navigation --------------------------x------------------- -->
+
+    <!----------------------------- Main Site Section ------------------------------>
+
+    <main>
+<div class="container1">
+<div class="gif">
+<img src="images/pushuprotation.gif" alt="jumping">
+</div>
+<h2>x10</h2>
+<div class="skp-bk">
+<!--<a href="congrats.html"><button class="btn" type="btn">Done</button></a>---><br><br><br>
+  <label for="show" class="btn">Done</label>
+<a class="a1" href="pushrotate5"><i class="fa fa-step-forward"></i></a>
+<a class="a2" href="inclinepush4"><i class="fa fa-step-backward"></i></a>
+
+ <div class="center">
+         <input type="checkbox" id="show">
+        
+         <div class="container">
+            <label for="show" class="fa fa-times-circle" title="close"></label>
+            <div class="text">
+               <img src="images/trophy.jpg" style="width:200px;height:200px;"><br>
+               <h1>Congratulations</h1>
+               <h2>Well Done!</h2>
+      </div>
+<br>
+<br>
+ </div>  
+ </div>
+</div>   
+
+
+
+</main>
+<br>
+<br>
+    <!-- --------------------------- Footer ---------------------------------------- -->
+
+    <!-- -------------x------------- Footer --------------------x------------------- -->
+
+    <!-- Jquery Library file -->
+    <script src="./js/Jquery3.4.1.min.js"></script>
+
+    <!-- --------- Owl-Carousel js ------------------->
+    <script src="./js/owl.carousel.min.js"></script>
+
+    <!-- ------------ AOS js Library  ------------------------- -->
+    <script src="./js/aos.js"></script>
+
+    <!-- Custom Javascript file -->
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

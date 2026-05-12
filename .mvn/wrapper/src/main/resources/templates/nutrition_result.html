@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    
+    <style>
+        body {
+            background-color: #f4f6f9;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 1000px;
+        }
+        .nutrition-info {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .nutrition-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .nutrition-result {
+            background-color: #f7f7f7;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .nutrition-result ul {
+            list-style: none;
+            padding: 0;
+        }
+        .nutrition-result li {
+            font-size: 18px;
+            padding: 5px 0;
+        }
+        .nutrition-result .label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<section>
+	    <div class="form-section">
+	        <h2 class="form-title">Search Nutrition</h2>
+	        <form th:action="@{/search}" method="get">
+	            <div class="form-group">
+	                <label for="foodNameSearch">Search Food by Name:</label>
+	                <input type="text" id="foodNameSearch" name="foodName" class="form-control" required />
+	            </div>
+	            <button type="submit" class="btn btn-primary">Search</button>
+	        </form>
+			<div th:if="${nutrition == null}" class="mt-4 alert alert-warning">
+				<h2 class="nutrition-title">Nutrition Details not </h2>
+			</div>
+
+	        <!-- Display Search Results -->
+	        <div th:if="${nutrition != null}" class="nutrition-info mt-5">
+	            <h2 class="nutrition-title">Nutrition Details for <span th:text="${nutrition.foodName}"></span>:</h2>
+	            <ul>
+	                <li><strong>Calories:</strong> <span th:text="${nutrition.calories}"></span></li>
+	                <li><strong>Fat:</strong> <span th:text="${nutrition.fat}"></span> g</li>
+	                <li><strong>Protein:</strong> <span th:text="${nutrition.protein}"></span> g</li>
+	                <li><strong>Carbs:</strong> <span th:text="${nutrition.carbs}"></span> g</li>
+	            </ul>
+	        </div>
+
+	        <!-- Display "Not Found" Message if Nutrition is Null -->
+	    </div>
+	</div>
+
+
+
+    </div>
+</section>
+
+<!-- Bootstrap JS and jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

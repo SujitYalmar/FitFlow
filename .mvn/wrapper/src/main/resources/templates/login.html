@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Login Page</title>
+</head>
+<body>
+	
+	<section>
+		<style>
+			.bgvideo
+			{
+			    margin-top: 5rem;
+			    margin-left: 51rem!important;
+			    position: absolute;
+			    width:40%;
+			    height: 55%;
+			    overflow: hidden;
+
+			}
+			.backgroun{
+			    background-image: url('/images/bg5.jpg');
+			    background-size: cover;
+			    width: 0%!important;
+			    height: 620px;
+			}
+
+
+		</style>
+
+		<link rel="stylesheet" type="text/css" href="/css/styles.css">
+		<div class="backgroun">
+			<section class="bgvideo">
+				<video controls autoplay loop muted>
+				    <source src="/videos/bgvideo.mp4" type="video/mp4">
+				    Your browser does not support the video tag.
+				</video>
+
+			       <h2><span2>NOTHING </span2><br><span3>WILL WORK</span3><br><span1>UNLESS </span1><br><span>YOU DO!</span></h2>
+
+			   </section>
+				  
+    <section>
+		<link rel="stylesheet" type="text/css" href="/css/login.css">
+        <div class="background">
+        </div>
+        <form action="userLogin" method="post">
+                 <h4>Login</h4>
+			<th:block th:if="${param.error}">
+			    <p class="text-center text-danger fs-5">[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]</p>
+			</th:block>
+			<th:block th:if="${param.logout}">
+			    <p class="text-center text-success fs-5">Logout Successfully</p>
+			</th:block>
+            <label for="username">Username</label>
+            <input type="text" placeholder="Email" name="username">
+            <label for="password">Password</label>
+            <input type="password" placeholder="Password" name="password">
+            <button class="button1">Log In</button>
+            <div class="social">
+                <div class="go"><i class="fab fa-google"></i><a href="forgot-password">Forgot password</a></div>
+                <div class="fb"><i class="fab fa-facebook"></i> <a href="register">sign up</a></div>
+            </div>
+        </form>
+    </section>
+</body>
+</html>

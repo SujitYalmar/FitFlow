@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fitness webapplication</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="./css/all.css">
+
+<!--Google Font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <!-- --------- Owl-Carousel ------------------->
+    <link rel="stylesheet" href="./css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
+
+    <!-- ------------ AOS Library ------------------------- -->
+    <link rel="stylesheet" href="./css/aos.css">
+
+    <!-- Custom Style   -->
+    <link rel="stylesheet" href="./css/style.css">
+   
+    
+    <style>
+   h2{
+        margin-top: -1rem;
+      }
+    .container{
+    background-color:#e0eeee;
+    height:87vh;
+    margin-left:10rem;
+    margin-right:10rem;
+    border-radius:20px;   
+    
+    }
+ 
+  .gif img{
+ width:300px;
+ height:320px;
+ margin-top:1rem;
+ margin-left:20.5rem;
+
+ }
+ .skp-bk .btn1 {
+     margin-left: 26.5rem;
+     margin-right: 26.5rem;
+     background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+     margin-top: 1rem;
+     font-size: 20px;
+     border-radius: 20px;
+     padding: 12px 0;  /* Adds vertical padding to ensure height */
+     width: 80px;      /* Width will adjust based on the content */
+     display: inline-block;  /* Ensures the button is inline with other content */
+     text-align: center;  /* Centers the text inside the button */
+     box-sizing: border-box;  /* Ensures padding is accounted for in the total width/height */
+ }
+
+ .skp-bk .btn1:hover {
+     background: linear-gradient(to right, #00f2fe 0%, #4facfe 100%);  /* Hover effect for visual interaction */
+ }
+ 
+ .skp-bk .btn{
+ margin-top:0.5rem;
+ margin-left:33.2rem;
+ background: linear-gradient(to right, #4facfe 0%,#00f2fe 100%);
+  border-radius:20px;
+ font-size:20px;
+ padding-top:0.2rem;
+ padding-bottom:0.2rem;
+
+ }
+ 
+
+ 
+    
+ .bck-btn{
+ margin-left:2rem;
+ font-size:25px;
+ }
+ 
+ 
+ .skp-bk .a1{
+ margin-left:35rem;
+  font-size:25px;
+ }
+ 
+  .skp-bk .a2{
+ margin-left:-14rem;
+  font-size:25px;
+ }
+ 
+
+ /* @media only screen and (max-width: 1630px){
+   .container{
+    height: 85vh;
+    margin-left:10rem;
+    margin-right:10rem;
+        }
+  .gif img{
+ width: 300px;
+  height: 300px;
+ 
+margin-right:30rem;
+margin-left: 30rem;
+}
+
+.btn{
+    
+  margin-right: 20rem;
+  padding-bottom: 5rem;
+  
+
+  
+  }
+  .skp-bk .a1{
+ margin-left:44rem;
+  font-size:25px;
+  margin-top: 1rem;
+ }
+ 
+  .skp-bk .a2{
+ margin-left:-15rem;
+  font-size:25px;
+ }
+}
+*/
+  
+  @media only screen and (max-width: 520px){
+    .container{
+    margin-left:2rem;
+    margin-right:2rem;
+    
+    }
+ 
+ 
+
+ .skp-bk .btn{
+ margin-left:7.5rem;
+
+ }
+ 
+ .bck-btn{
+font-size:20px;
+
+}
+
+
+.gif img{
+ width: 300px;
+  height: 300px;
+margin-left:2.2rem;
+}
+
+.skp-bk .a1{
+    margin-top: 2rem;
+ margin-left:18rem;
+  font-size:25px;
+ }
+ 
+  .skp-bk .a2{
+ margin-left:-15rem;
+  font-size:25px;
+ }
+  }
+    </style>
+    
+
+</head>
+
+<body>
+   
+<br>
+<body>
+<div class="bck-btn">
+<a href="index3">
+<i class="fa fa-arrow-circle-left"></i>Back</a>
+</div>
+<br>
+    <!-- ------------x---------------  Navigation --------------------------x------------------- -->
+
+    <!----------------------------- Main Site Section ------------------------------>
+
+    <main>
+<div class="container">
+<div class="gif">
+<img src="images/pushup.gif" alt="jumping">
+<h2>x20</h2>
+<div class="skp-bk">
+<a href="kneepushup"><br>
+<h1 class="btn1" type="btn">Done</h1></a>
+<a class="a1" href="kneepushup"><i class="fa fa-step-forward"></i></a>
+<a class="a2" href="jumpingjack1"><i class="fa fa-step-backward"></i></a>
+</div>
+</div>
+<br>
+<br>
+</div>
+</div>
+  
+<script type="text/javascript">
+  function submitMessage() {
+  const message = "Date:29 April 2023 |  Exercise Name:Pushup | Calories Burned:5.6 calories";
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", "store_message.php");
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      //alert("Message successfully submitted!");
+    } else {
+      alert("Error submitting message. Please try again.");
+    }
+  };
+  xhr.send("message=" + encodeURIComponent(message));
+}
+</script>
+
+
+</main>
+<br>
+<br>
+    <!-- --------------------------- Footer ---------------------------------------- -->
+
+    <!-- -------------x------------- Footer --------------------x------------------- -->
+
+    <!-- Jquery Library file -->
+    <script src="./js/Jquery3.4.1.min.js"></script>
+
+    <!-- --------- Owl-Carousel js ------------------->
+    <script src="./js/owl.carousel.min.js"></script>
+
+    <!-- ------------ AOS js Library  ------------------------- -->
+    <script src="./js/aos.js"></script>
+
+    <!-- Custom Javascript file -->
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

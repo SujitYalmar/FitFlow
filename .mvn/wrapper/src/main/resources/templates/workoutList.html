@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    th:replace="base::layout(~{::section})">
+	<section>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Workouts</title>
+	
+
+</head>
+<body>
+	    <link rel="stylesheet" href="./css/all.css">
+
+	<!--Google Font-->
+	    <link rel="preconnect" href="https://fonts.gstatic.com">
+	    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+	    <!-- --------- Owl-Carousel ------------------->
+	    <link rel="stylesheet" href="./css/owl.carousel.min.css">
+	    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
+
+	    <!-- ------------ AOS Library ------------------------- -->
+	    <link rel="stylesheet" href="./css/aos.css">
+
+	    <!-- Custom Style   -->
+	    <link rel="stylesheet" href="./css/stylef.css">
+
+	 
+
+<section> 	
+		<style>
+			@import url('http//fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900');
+			*
+			{
+			    
+			    font-family: 'Poppins',sans-serif;
+			}
+
+	    /* Global styles for body and layout */
+	    body {
+	        font-family: 'Poppins', sans-serif;
+	        margin: 0;
+	        padding: 0;
+	    }
+
+	    /* Isolate styles to the workout page section */
+	    .workout-page {
+	        background-color: #f9f9f9;
+	        padding: 20px;
+	    }
+
+	    .workout-page section {
+	        max-width: 1200px;
+	        margin: 20px auto;
+	        background-color: #fff;
+	        padding: 20px;
+	        border-radius: 10px;
+	        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	    }
+
+	    .workout-page h1 {
+	        text-align: center;
+	        font-size: 2rem;
+	        margin-bottom: 20px;
+	        color: #333;
+	    }
+
+	    .workout-page .add-workout {
+	        display: block;
+	        text-align: center;
+	        margin-bottom: 20px;
+	        font-size: 18px;
+	        font-weight: bold;
+	        color: #28a745;
+	    }
+
+	    .workout-page .add-workout:hover {
+	        color: #218838;
+	    }
+
+	    /* Grid layout for workout list */
+	    .workout-page ul {
+	        list-style-type: none;
+	        padding: 0;
+	        display: grid;
+	        grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+	        gap: 20px;
+	    }
+
+	    .workout-page li {
+	        background-color: #f8f9fa;
+	        padding: 15px;
+	        border-radius: 8px;
+	        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	        font-size: 14px;  /* Make the font smaller for each workout */
+	        transition: transform 0.3s ease, box-shadow 0.3s ease;
+	    }
+
+	    .workout-page li:hover {
+	        transform: translateY(-5px);
+	        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+	    }
+
+	    .workout-page li strong {
+	        font-size: 1.1rem;
+	        color: #333;
+	    }
+
+	    .workout-page li span {
+	        display: block;
+	        font-size: 12px;
+	        color: #555;
+	        margin-top: 5px;
+	    }
+
+	    .workout-page li .edit-delete {
+	        margin-top: 10px;
+	        font-size: 12px;
+	        text-align: right;
+	    }
+
+	    .workout-page .edit-delete a {
+	        margin-right: 10px;
+	        color: #28a745;
+	    }
+
+	    .workout-page .edit-delete a.delete {
+	        color: #dc3545;
+	    }
+
+	    .workout-page .edit-delete a:hover {
+	        text-decoration: underline;
+	    }
+
+	    .workout-page .edit-delete a.delete:hover {
+	        color: #c82333;
+	    }
+
+	    /* Responsive Design for smaller screens */
+	    @media (max-width: 768px) {
+	        .workout-page ul {
+	            grid-template-columns: repeat(2, 1fr); /* 2 items per row on smaller screens */
+	        }
+	    }
+
+	    @media (max-width: 480px) {
+	        .workout-page ul {
+	            grid-template-columns: 1fr; /* 1 item per row on very small screens */
+	        }
+	    }
+		/* Styling for the 'All Workouts' header */
+		.workout-page h1 {
+		    font-size: 2.5rem; /* Large font size */
+		    font-weight: bold; /* Make the font bold */
+		    color: #333; /* Dark color for the text */
+		    text-align: center; /* Center the header */
+		    margin-bottom: 30px; /* Add space below the header */
+		    text-transform: uppercase; /* Uppercase letters for a more impactful look */
+		    letter-spacing: 2px; /* Add some letter spacing for a modern effect */
+		    position: relative; /* Allows for the addition of decorative elements */
+		}
+
+		/* Optional: Add a bottom border or underline effect */
+		.workout-page h1::after {
+		    content: '';
+		    display: block;
+		    width: 50px;
+		    height: 3px;
+		    background-color: #28a745; /* Green underline color */
+		    margin: 15px auto 0; /* Center the underline */
+		}
+
+		/* Optional: Add a subtle shadow for more depth */
+		.workout-page h1 {
+		    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for text */
+		}
+
+	</style>
+<div class="workout-page">
+        <section>
+            <h1>All Workouts</h1>
+            <a href="/workouts/add" class="add-workout">Add New Workout</a>
+
+            <ul>
+                <th:block th:each="workout : ${workouts}">
+                    <li>
+                     <!--   <strong th:text="${workout.name}"></strong>-->
+                        <span th:text="'Name: ' + ${workout.description}"></span>
+                        <span th:text="'Date: ' + ${workout.date}"></span>
+                        <span th:text="'Duration: ' + ${workout.duration} + ' minutes'"></span>
+                        <span th:text="'Calories Burned: ' + ${workout.caloriesBurned}"></span>
+                        <span th:text="'Run Steps: ' + ${workout.runSteps}"></span>
+                        <span th:text="'Gym Exercises: ' + ${workout.gymExercises}"></span>
+                        <div class="edit-delete">
+                            <a th:href="@{/workouts/edit/{id}(id=${workout.id})}">Edit</a> |
+                            <a th:href="@{/workouts/delete/{id}(id=${workout.id})}" class="delete">Delete</a>
+                        </div>
+                    </li>
+                </th:block>
+            </ul>
+        </section>
+    </div>
+	<br>
+	<br>
+	<br>
+
+	    <!-- --------------------------- Footer ---------------------------------------- -->
+	<body class="footer-body">
+	    <footer>
+	        <div class="footer-content">
+	            <div class="footer-content" data-aos="fade-right" data-aos-delay="200">
+	            
+	                <h3>Follow Us</h3>
+	                <h4>On Social Media</h4>
+	                
+	                <div class="links"align="center">
+	                  <a1 href="#"><i class="fab fa-facebook-f"></i></a1>
+	                    <a2 href="#"><i class="fab fa-twitter"></i></a2>
+	                    <a3 href="#"><i class="fab fa-instagram"></i></a3>
+	                    <a4 href="#"><i class="fab fa-youtube"></i></a4>
+	                </div>
+	                </div>
+	                
+	        <div class="footer-bottom">
+	            <h4 style="color:#838b8b;"> Copyright ©2024 All rights are reserved | 
+	             </h4>
+	     </div>
+	     
+	                
+	    </footer>
+	</body>
+	    <!-- -------------x------------- Footer --------------------x------------------- -->
+
+	    <!-- Jquery Library file -->
+	    <script src="./js/Jquery3.4.1.min.js"></script>
+
+	    <!-- --------- Owl-Carousel js ------------------->
+	    <script src="./js/owl.carousel.min.js"></script>
+
+	    <!-- ------------ AOS js Library  ------------------------- -->
+	    <script src="./js/aos.js"></script>
+
+	    <!-- Custom Javascript file -->
+	    <script src="./js/main.js"></script>
+	
+	</body>
+	</section>
+	</section>
+	</html>

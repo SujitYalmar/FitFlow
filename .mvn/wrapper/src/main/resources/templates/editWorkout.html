@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit Workout</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 <style>
+		/* Global Styles */
+		body {
+			font-family: 'Poppins', sans-serif;
+			background-color: #f4f7f6;
+			color: #333;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+
+		section {
+			background-color: white;
+			padding: 15px 20px;
+			border-radius: 8px;
+			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+			width: 100%;
+			max-width: 450px;
+		}
+
+		h1 {
+			text-align: center;
+			color: #2c3e50;
+			font-size: 20px;
+			margin-bottom: 20px;
+		}
+
+		label {
+			font-size: 14px;
+			font-weight: bold;
+			margin-bottom: 5px;
+			display: block;
+		}
+
+		input, select {
+			width: 100%;
+			padding: 8px;
+			margin: 8px 0 15px 0;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			font-size: 14px;
+			background-color: #f9f9f9;
+		}
+
+		button {
+			width: 100%;
+			padding: 10px;
+			font-size: 16px;
+			color: white;
+			background-color: #27ae60;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s;
+		}
+
+		button:hover {
+			background-color: #2ecc71;
+		}
+
+		a {
+			display: block;
+			text-align: center;
+			font-size: 13px;
+			color: #2980b9;
+			text-decoration: none;
+			margin-top: 15px;
+		}
+
+		a:hover {
+			color: #3498db;
+		}
+
+		/* Mobile Responsiveness */
+		@media (max-width: 600px) {
+			section {
+				padding: 10px 15px;
+			}
+
+			h1 {
+				font-size: 18px;
+			}
+
+			input, select {
+				font-size: 12px;
+				padding: 6px;
+			}
+
+			button {
+				font-size: 14px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<section>
+    <h1>Edit Workout</h1>
+
+    <!-- Form for editing an existing workout -->
+    <form action="#" th:action="@{/workouts/edit/{id}(id=${workout.id})}" th:object="${workout}" method="post">
+        <label for="name">Workout Name:</label>
+        <input type="text" id="name" th:field="*{name}" required><br>
+
+        <label for="description">Description:</label>
+        <input type="text" id="description" th:field="*{description}"><br>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" th:field="*{date}" required><br>
+
+        <label for="duration">Duration (minutes):</label>
+        <input type="number" id="duration" th:field="*{duration}" required><br>
+
+        <label for="steps">Steps:</label>
+        <input type="number" id="steps" th:field="*{runSteps}" required><br>
+
+        <label for="caloriesBurned">Calories Burned:</label>
+        <input type="number" id="caloriesBurned" th:field="*{caloriesBurned}" required><br>
+		<label for="gymExercises">Gym Exercises:</label>
+		<select id="gymExercises" name="gymExercises">
+		    <option value="Squats">Squats</option>
+		    <option value="Bench Press">Bench Press</option>
+		    <option value="Deadlift">Deadlift</option>
+		    <option value="Pull-up">Pull-up</option>
+		    <option value="Lunges">Lunges</option>
+		</select><br>
+
+        <button type="submit">Update Workout</button>
+    </form>
+
+    <a href="/workouts">Back to Workouts List</a>
+	</section>
+
+</body>
+</html>

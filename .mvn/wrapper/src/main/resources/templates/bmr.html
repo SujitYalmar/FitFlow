@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMR and BMI Machine</title>
+    <link rel="stylesheet" href="https://sstackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <!-- --------- Owl-Carousel ------------------->
+    <link rel="stylesheet" href="./css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
+	    <link rel="stylesheet" href="./css/all.css">
+
+	<!--Google Font-->
+	    <link rel="preconnect" href="https://fonts.gstatic.com">
+	    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+	    <!-- --------- Owl-Carousel ------------------->
+	    <link rel="stylesheet" href="./css/owl.carousel.min.css">
+	    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
+
+	    <!-- ------------ AOS Library ------------------------- -->
+	    <link rel="stylesheet" href="./css/aos.css">
+
+
+   
+    <style type="text/css">
+       #container{
+        margin-top: 2rem;
+           border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    margin:auto;
+    width: 768px;
+    max-width: 100%;
+    min-height: 610px;
+        min-width:370px;
+
+
+       } 
+       .text-center{
+        text-align: center;
+       font-size: 30px;
+       }
+       .form-group{
+        margin-left: -3rem;
+        text-align: center;
+        font-size: 24px;
+
+       }
+
+       /* details */
+       #height{
+        margin-left: 4rem;
+       }
+
+       #age{
+        margin-left: 2rem;
+        }
+
+        #gender{
+          margin-left: -2rem;   
+        }
+
+        .my-2{
+            margin-left: 4rem;
+        }
+        #BMRage{
+            margin-left: 5rem;
+        }
+        #BMRgenderValue{
+             margin-left: 4rem;
+        }
+
+        #btn1{
+             background:linear-gradient(to right, #00f2fe 0%,#4facfe 100%);
+            margin-top: 2rem;
+            margin-left: 21rem;
+            border-radius: 20px;
+            height: 35px;
+            width: 130px;
+        }
+
+        .bck-btn{
+            margin-left:2rem;
+            font-size:25px;
+         }
+         
+
+
+    </style>
+    
+</head>
+
+<body style="background-color: lightcyan;">
+    <a href="../../home1" style="color:black;font-size: 20px;">
+<i class="fa fa-arrow-circle-left"></i>Back</a>
+</div>
+    <br>
+    <section id="bmr" class="my-4">
+        <div class="container bg-primary text-light font-weight-bolder p-5" id="container">
+            <h3 class="text-center">Calculate your BMR</h3>  <br>
+                    <br>
+            <form action="">
+                <div class="form-group">
+                    <label for="BMRweight" class="py-1">Weight</label>
+                    <input type="number" placeholder="Enter Your Weight (in kg)" class="my-2" name="BMRweight" id="BMRweight" required>
+                    <br>
+                    <br>
+                </div>
+                <div class="form-group">
+                    <label for="BMRheight" class="py-1" id="height">Height</label>
+                    <input type="number" placeholder="Enter Your Height (in centimeter)" class="form-control my-2" name="BMRheight" id="BMRheight" required>
+                    <select name="BMRheightValue" id="BMRheightValue" class="form-control" onchange="BMRheightValueFunc()">
+                                        <option value="inch">Inch</option>
+                                        <option value="cm" selected>Cm</option>
+                                        <option value="meter">Meter</option>
+                                    </select>
+                </div>
+                  <br><br>
+                   
+                <div class="form-group">
+                    <label for="BMRage" class="py-1" id="age">Age</label>
+                    <input type="number" placeholder="Enter Your Age (in Year)" class="form-control my-2" name="BMRage" id="BMRage" required>
+                </div>
+                  <br>
+                    <br>
+                <div class="form-group">
+                    <label for="BMRgender" class="py-1" id="gender">Choose Gender</label>
+                    <select name="BMRgenderValue" id="BMRgenderValue" class="form-control">
+                                        <option value="female">Female</option>
+                                        <option value="male" selected>Male</option>
+                                    </select>
+                                      <br>
+                    <br>
+                </div>
+                <button type="button" onclick="BMRcalc()" class="mt-4 btn btn-secondary btn-lg" id="btn1">Count  BMR</button>
+                
+                <div style="text-align: center;margin-top: 4rem; font-weight: bold; font-size: 30px;" id="BMRres">
+                    <h5 style="font-size: 20px;">The Result Will Appear Here</h4>
+                </div>
+            </form>
+        </div>
+    </section>
+   
+    <script>
+		// The BMR Section of the website Starts Here!
+
+		var BMRgivenHeight = document.getElementById("BMRheight");
+		var BMRmainWeight = document.getElementById("BMRweight");
+		var BMRmainAge = document.getElementById("BMRage");
+
+		function BMRheightValueFunc() {
+		    if (BMRheightValue.value == "inch") {
+		        BMRgivenHeight.setAttribute("placeholder", "Enter Your Height (in inch)");
+		    } else if (BMRheightValue.value == "cm") {
+		        BMRgivenHeight.setAttribute("placeholder", "Enter Your Height (in centimeter)");
+		    } else if (BMRheightValue.value == "meter") {
+		        BMRgivenHeight.setAttribute("placeholder", "Enter Your Height (in meter)");
+		    }
+		}
+
+		function BMRcalc() {
+		    var BMRmainHeight;
+		    if (BMRheightValue.value == "inch") {
+		        BMRmainHeight = BMRgivenHeight.value * 2.54;
+		    } else if (BMRheightValue.value == "cm") {
+		        BMRmainHeight = BMRgivenHeight.value;
+		    } else if (BMRheightValue.value == "meter") {
+		        BMRmainHeight = BMRgivenHeight.value * 100;
+		    }
+		    var BMRres;
+		    var BMRgenderValue = document.getElementById("BMRgenderValue");
+		    if (BMRgenderValue.value == "female") {
+		        var BMRdiboWeight = BMRmainWeight.value * 9.6
+		        var BMRdiboHeight = BMRmainHeight * 1.8
+		        var BMRdiboAge = BMRmainAge.value * 4.7
+		        BMRres = BMRdiboWeight + BMRdiboHeight - BMRdiboAge + 655;
+		    } else if (BMRgenderValue.value == "male") {
+		        var BMRdiboWeight = BMRmainWeight.value * 13.7
+		        var BMRdiboHeight = BMRmainHeight * 5
+		        var BMRdiboAge = BMRmainAge.value * 6.8
+		        BMRres = BMRdiboWeight + BMRdiboHeight - BMRdiboAge + 66;
+		    }
+		    BMRresInt = BMRres
+		    BMRres = BMRres.toString();
+
+		    if (BMRres == "NaN" || BMRres == "0" || BMRres == "66" || BMRres == "655") {
+		        document.getElementById("BMRres").innerHTML = "<h5>Please Enter Valid Information.</h5>";
+		        window.alert("Please enter valid information.\nWithout giving valid information, The site will not work.\nHope you understand it.");
+		    } else {
+		        BMRres = BMRresInt.toFixed(3);
+		        var all = `<h5>Your BMR is ${BMRres}</h5>`;
+		        document.getElementById("BMRres").innerHTML = all;
+		    }
+		}
+
+		// The BMR Section of the website Ends Here!
+
+
+
+
+
+
+
+
+
+		// this one is created for BMI section
+		/*
+		    view code for BMI section: https://github.com/jbmakib/BMI-Calculator
+		    live site for BMI section: https://jbmakib.github.io/BMI-Calculator/
+		*/
+
+		/* The BMI Section of the website starts here!
+
+		var BMIgivenHeight = document.querySelector("#BMIheight");
+
+		function BMIheightValueFunc() {
+		    if (BMIheightValue.value == "inch") {
+		        BMIgivenHeight.setAttribute("placeholder", "Enter Your Height (in inch)");
+		    } else if (BMIheightValue.value == "cm") {
+		        BMIgivenHeight.setAttribute("placeholder", "Enter Your Height (in centimeter)");
+		    } else if (BMIheightValue.value == "meter") {
+		        BMIgivenHeight.setAttribute("placeholder", "Enter Your Height (in meter)");
+		    }
+		}
+
+		function BMIcalc() {
+		    var BMImainWeight = document.querySelector("#BMIweight").value;
+		    var BMImainHeight;
+		    if (BMIheightValue.value == "inch") {
+		        BMImainHeight = BMIgivenHeight.value / 39.37;
+		    } else if (BMIheightValue.value == "cm") {
+		        BMImainHeight = BMIgivenHeight.value / 100;
+		    } else if (BMIheightValue.value == "meter") {
+		        BMImainHeight = BMIgivenHeight.value
+		    }
+		    BMImainHeight = BMImainHeight ** 2;
+		    var BMIres = BMImainWeight / BMImainHeight;
+		    var BMIres = BMIres.toFixed(3);
+		    var BMIresPlus;
+		    if (BMIres < 18.5) {
+		        BMIresPlus = "<h5>Your weight is too Low!!! You must gain your weight by eating measurd food.</h5>";
+		    } else if (BMIres <= 24.99999999999999999999999999999999999999999999 && BMIres >= 18.5) {
+		        BMIresPlus = "<h5>Your weight is perfect. You are fit.</h5>";
+		    } else if (BMIres <= 29.99999999999999999999999999999999999999999999 && BMIres >= 25) {
+		        BMIresPlus = "<h5>You are weighted. Please loss some weight by doing Physical Exercise.</h5>";
+		    } else if (BMIres <= 34.99999999999999999999999999999999999999999999 && BMIres >= 30) {
+		        BMIresPlus = "<h5>You are in the first step of over weight. Try to eat choosed measured food. You must do Physical Exercise.</h5>";
+		    } else if (BMIres <= 39.99999999999999999999999999999999999999999999 && BMIres >= 35) {
+		        BMIresPlus = "<h5>You are in the second step of over weight. Try to eat measured food. You must do Physical Exercise.</h5>";
+		    } else if (BMIres >= 40) {
+		        BMIresPlus = "<h5>You are totally over weighted. You are in risk of death. Please contact a doctor.</h5>";
+		    } else {
+		        BMIres = BMIres.toString();
+		    }
+		    if (BMIres == "NaN" || BMIres == "0" || BMImainWeight == "" || BMImainHeight == "") {
+		        document.getElementById("BMIres").innerHTML = "<h5>Please Enter Valid Information.</h5>";
+		        window.alert("Please enter valid information.\nWithout giving valid information, The site will not work.\nHope you understand it.");
+		    } else {
+		        var all = `<h5>Your BMI is ${BMIres} ${BMIresPlus}</h5>`;
+		        document.getElementById("BMIres").innerHTML = all;
+		    }
+		}
+
+		The BMI Section of the website ends here */
+	</script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+
+</html>

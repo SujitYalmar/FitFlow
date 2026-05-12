@@ -1,0 +1,182 @@
+.user-pic{
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	object-fit: cover; /* Ensures the image covers the element without distortion */
+	cursor: pointer;
+	margin-left: 0%;
+	background-color: white;
+}
+.sub-menu-wrap{
+	position:absolute;
+	top: 100%;
+	right: 1%;
+	width: 350px;
+   height: 2000%;
+		max-height: 0px;
+		overflow: hidden;
+		transition: max-height 0.5s;
+}
+
+.sub-menu-wrap.open-menu{
+	max-height: 500px;
+	}
+
+.sub-menu{
+	background: #fff;
+	padding: 20px;
+	margin: 5px;
+}
+.user-info {
+  display: flex;
+  align-items: flex-start; /* Align children to the top */
+  position: relative; /* Make the container relative for positioning children */
+  gap: 15px; /* Add space between the image and text */
+}
+
+.user-info img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%; /* Circular image */
+  object-fit: cover; /* Ensure the image fits nicely */
+  margin-right: 15px; /* Space to the right of the image */
+  border: 2px solid #f1f1f1; /* Optional border around the image */
+}
+
+.user-info h2 {
+  font-weight: 500;
+  position: absolute; /* Position the h2 element in front of the image */
+  top: 50%; /* Vertically center it in relation to the image */
+  left: 100px; /* Position to the right of the image */
+  transform: translateY(-50%); /* Adjust vertical alignment to center */
+  font-size: 1.5rem; /* Adjust font size */
+  color: #333; /* Text color */
+  z-index: 1; /* Make sure h2 is on top of the image */
+  margin: 0; /* Remove default margin */
+}
+
+.user-info h6 {
+  font-weight: 200;
+  color: #777; /* Lighter text color for secondary info */
+  font-size: 1rem; /* Font size for h6 */
+  line-height: 1.4; /* Line spacing for readability */
+  margin-top: 90px; /* Add space below the h2, ensuring it appears below */
+  margin-left: 100px; /* Align h6 with the h2 */
+  position: relative; /* Ensure it remains positioned relative to its container */
+}
+
+/* Optional: Add a hover effect for the user info card */
+.user-info:hover {
+  background-color: #f9f9f9; /* Light background change */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 8px; /* Rounded corners */
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Optional: Responsive Design for smaller screens */
+@media (max-width: 768px) {
+  .user-info {
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center everything */
+    gap: 10px; /* Adjust the gap between elements */
+  }
+
+  .user-info img {
+    margin-right: 0;
+    margin-bottom: 10px; /* Space between image and text */
+  }
+
+  .user-info h2 {
+    font-size: 1.3rem;
+    position: relative; /* Switch to normal flow on smaller screens */
+    top: auto;
+    left: auto;
+    transform: none;
+    margin-top: 10px; /* Add space from image on smaller screens */
+  }
+
+  .user-info h6 {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    margin-left: 0; /* Remove the left margin for proper centering */
+    text-align: center; /* Center-align the text */
+    position: relative; /* Ensures it aligns well in column layout */
+  }
+}
+
+.sub-menu-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #525252;
+  margin: 12px 0;
+}
+
+.sub-menu-link{
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: #525252;
+	margin: 12px 0;
+}
+
+.sub-menu-link p{
+	width: 100%;
+	
+}
+.sub-menu-link span{
+	font-size: 22px;
+	transition: transform 0.5s ;
+	}
+.sub-menu-link:hover span{
+	transform: translateX(5px);
+	}
+
+	.sub-menu-link:hover p{
+		font-weight: 600;
+		}
+		.btn-custom {
+		background-color: #007bff; /* Bootstrap primary color */
+		color: white;
+		border: none;
+		font-size: 10px;
+		border-radius: 0px;
+		transition: background-color 0.3s;
+
+
+		}
+		input[type="file"]
+		{
+		display: none;
+		}
+		label{
+		display: inline-block;
+		text-transform: uppercase;
+		color: #f4f4f4;
+		background: #e63946;
+		text-align: center;
+		padding: 2px 5px;
+		font-size: 8px;
+		letter-spacing: 1.5px;
+		user-select: none;
+		cursor: pointer;
+		box-shadow: 5px 15px 25px rgba(0,0,0,0.35);
+		border-radius: 2px;
+		}
+		
+		
+		.btn-custom1 {
+
+		display: inline-block;
+		text-transform: uppercase;
+		color: #f4f4f4;
+		background: #e63946;
+		text-align: center;
+		padding: 2px 5px;
+		font-size: 8px;
+		letter-spacing: 1.5px;
+		user-select: none;
+		cursor: pointer;
+		box-shadow: 5px 15px 25px rgba(0,0,0,0.35);
+		border-radius: 2px;
+		}

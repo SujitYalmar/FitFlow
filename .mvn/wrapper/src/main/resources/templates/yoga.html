@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+<section>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fitness webapplication</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="./css/all.css">
+	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+
+<!--Google Font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <!-- --------- Owl-Carousel ------------------->
+    <link rel="stylesheet" href="./css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
+
+    <!-- ------------ AOS Library ------------------------- -->
+    <link rel="stylesheet" href="./css/aos.css">
+
+    <!-- Custom Style   -->
+    <link rel="stylesheet" href="./css/styleyoga.css">
+	<link rel="stylesheet" href="./css/styles.css">
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+		crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="/css/styles.css">
+
+    
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+:root {
+  --background: #121212;
+  --primary:red;
+}
+
+.containeryoga{
+  display:flex;
+  align-items:center;
+  margin-left: -30rem;
+}
+.containeryoga > .static-txt {
+  color: black;
+  font-size: 50px;
+}
+.navbar navbar-expand-lg navbar-dark r{
+	height:10px!important;
+
+}
+.containeryoga > .dynamic-txt {
+  color: var(--primary);
+  font-size:50px;
+  height:70px;
+  line-height:70px;
+  overflow:hidden;
+  margin-left:0 0 0 15px;
+  padding-left: 15px;
+}
+.dynamic-txt > li {
+  list-style:none;
+  font-weight:500;
+  position: relative;
+  animation: slide 6s steps(2) infinite;
+}
+@keyframes slide{
+  100% {
+    top: -70px;
+  }
+}
+.dynamic-txt li span {
+  margin:5px 0;
+  line-height:80px;
+}
+
+.dynamic-txt li span::after {
+  position:absolute;
+  content:'';
+  left:0;
+  height:100%;
+  width:100%;
+  line-height:70px;
+  background:white;
+  border-left: 2px solid var(--primary);
+  animation: typing 3s steps(10) infinite;
+}
+
+@keyframes typing {
+  40%,60% {left: calc(100% + 30px);}
+  100% {left:0;}
+}
+.testimonial {
+  background-color: white;
+  text-align: center;
+  padding: 30px 30px 50px;
+  margin: 100px 15px 430px;
+  position: relative;
+}
+
+.testimonial::before,
+.testimonial::after {
+  content: "";
+  border-top: 40px solid white;
+  border-right: 125px solid transparent;
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+}
+
+.testimonial::after {
+  border-right: none;
+  border-left: 125px solid transparent;
+  left: auto;
+  right: 0;
+}
+
+.testimonial .icon {
+  display: inline-block;
+  font-size: 80px;
+  color: #016d9b;
+  margin-bottom: 20px;
+  opacity: 0.6;
+}
+
+.testimonial .description {
+  font-size: 14px;
+  color: #777;
+  text-align: justify;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.testimonial .testimonial-content {
+  width: 100%;
+  left: 0;
+  position: absolute;
+}
+
+.testimonial .pic {
+  display: inline-block;
+  border: 4px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 2px 2px red;
+  overflow: hidden;
+  z-index: 1;
+  position: relative;
+}
+
+.testimonial .pic img {
+  width: 100%;
+  height: auto;
+}
+
+.testimonial .name {
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  text-transform: capitalize;
+  margin: 10px 0 5px 0;
+}
+
+.testimonial .title {
+  display: block;
+  font-size: 14px;
+  color: #ffd9b8;
+}
+
+.owl-controls {
+  margin-top: 20px;
+}
+
+.owl-pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.owl-page {
+  height: 10px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10%;
+}
+
+.owl-page:hover,
+.owl-page.active {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.owl-page:not(first-item) {
+  margin-left: 10px;
+}
+.navbar {
+  height: 60px; /* or whatever height you desire */
+  overflow: hidden;
+}
+
+
+	.navbar {
+	    background-color: #343a40 !important; /* Dark background for the navbar */
+	}
+
+	.navbar-nav {
+	    display: flex !important;
+	    justify-content: flex-end !important; /* Align the navbar items to the right */
+	    width: 100% !important;
+	}
+
+	.nav-item {
+	    margin-right: 20px ;
+	}
+
+	/* Navigation items */
+	.navbar-nav .nav-link {
+	    color: white !important; /* Default link color */
+	    text-decoration: none !important;
+	    font-size: 1rem !important;
+	    position: relative !important; /* Position relative to the element */
+	    transition: color 0.3s ease !important; /* Smooth transition for color changes */
+	}
+
+	/* Add a black underline on hover and animate its width */
+	.navbar-nav .nav-link::after {
+	    content: ""; /* Create the underline */
+	    position: absolute;
+	    bottom: 0; /* Place it at the bottom of the link */
+	    left: 0;
+	    width: 0; /* Initially, the width is 0 (hidden) */
+	    height: 2px; /* Line thickness */
+	    background-color: #000; /* Black color for the underline */
+	    transition: width 0.3s ease !important; /* Animate width increase */
+	}
+
+	/* Hover effect - underline expands */
+	.navbar-nav .nav-link:hover::after {
+	    width: 100%; /* Expand the underline to full width */
+	}
+
+	/* Active state (after click) */
+	.navbar-nav .nav-link:active {
+	    color: #ffffff !important; /* White text when active */
+	    background-color: rgba(0, 123, 255, 0.5) !important; /* Stronger blue background when clicked */
+	    filter: blur(2px) !important; /* Slightly stronger blur effect on active state */
+	    border-bottom: 2px solid #000 !important; /* Black underline below the clicked link */
+	}
+
+	/* Submenu for profile settings */
+	.user-pic {
+	    cursor: pointer !important;
+	}
+
+	/* Media Query for screens wider than 2500px */
+	@media (min-width: 6000px) {
+	    .navbar-nav {
+	        justify-content: flex-end ; /* Align the navbar items to the right */
+	    }
+
+	    .navbar-nav .nav-item {
+	        margin-right: 30px !important; /* Add more space between items */
+	    }
+		.navbar-nav .logo1 {
+		    margin-right: 900px !important; /* Add more space between items */
+			float: right;           /* Pushes the content to the right */
+			background-color: lightgray;
+			padding: 10px;
+		}
+
+	}
+
+	/* Styling for the logo text */
+	.navbar-brand {
+	    font-size: 2rem;
+	    font-weight: bold;
+	    color: #ffffff !important; /* Logo text color */
+	    margin-right: auto; /* Push logo to the left side */
+	    text-transform: uppercase; /* Capitalize letters */
+	}
+
+</style>
+
+
+</style>
+    
+
+</head>
+
+<body>
+	<section class="a">
+	<nav class="navbar navbar-expand-lg navbar-dark r">
+		<div class="container">
+			<a class="navbar-brand" href="/">Fitness</a> <!-- Logo Text -->
+		<!--	<a class="navbar-brand" href="#">User Management</a>-->
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					
+					<th:block th:if="${user==NULL}">
+			     <a class="new" href="register">Register</a>
+						<a class="new1" href="signin">Login</a>
+					</th:block>
+					<th:block th:if="${user!=NULL}">
+					
+					<li class="nav-item"><a class="nav-link" href="home1">Progress</a></li>
+					<li class="nav-item"><a class="nav-link" href="workouts">Workouts</a></li>
+					<li class="nav-item"><a class="nav-link" href="yoga">Yoga</a></li>
+					<li class="nav-item"><a class="nav-link" href="workouth">Report</a></li>
+					<li class="nav-item"><a class="nav-link" href="index">Gym</a></li>
+
+					<section>
+						<link rel="stylesheet" type="text/css" href="/css/profile2.css">
+						<div class="hero">
+							<nav>
+								<img th:src="@{/uploads/{username}.jpg(username=${user.id})}" class="user-pic" onclick="ToggleMenu()"/>
+								<form action="/upload" method="post" enctype="multipart/form-data">
+								<div class="sub-menu-wrap" id="subMenu">
+									<div class="sub-menu">
+										<div class="user-info">
+											<img th:src="@{/uploads/{username}.jpg(username=${user.id})}" alt="User Image" />
+	                                          <h2>[[${user.name}]]</h2>
+										</div>
+										<hr>
+										<a href="#" class="sub-menu-link">
+											<p><input type="file" id="profilePic" name="profilePic" accept="image/*" class="btn-custom">
+											<label for="profilePic">change profile pic</label>
+											<button type="submit" class="btn-custom">Update</button>
+
+										</p>
+											
+											<span></span>
+										</a>
+
+										<a href="#" class="sub-menu-link">
+											<img src"images/">
+											  <p>Fitness goal::[[${user.fitness_goal}]]</p>
+											<span></span>
+										</a>
+										<a class="sub-menu-link">
+											<img src"images/">
+											  <p>[[${user.email}]]</p>
+											<span></span>
+										</a>
+										<a  href="/profile" class="sub-menu-link">
+											<img src"images/">
+											  <p>Edit Details</p>
+											<span></span>
+										</a>
+
+
+										<a href="/logout" class="sub-menu-link">
+											<img src"images/">
+											<p>logout</p>
+											<span></span>
+											
+										</a>
+										<a  href="/delete" class="sub-menu-link">
+											<img src"images/">
+											<p class="btn-custom1">close account</p>
+											<span></span>
+										</a>
+
+
+									</div>
+								</div>
+							</nav>
+						</div>
+					</section>
+					</th:block>
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+	</section>
+	<!-- End Navbar -->
+
+
+    <!-- ----------------------------  Navigation ---------------------------------------------- -->
+
+
+    <!----------------------------- Main Site Section ------------------------------>
+
+    <main>     
+    <section class="site-title">
+            <div class="site-background" data-aos="fade-up" data-aos-delay="100">
+                <div class="containeryoga">
+  <div class="static-txt">stay</div>
+  <ul class="dynamic-txt">
+    <li><span>stronger</span></li>
+     <li><span>healthier</span></li>
+    
+  </ul>
+               
+            </div>
+        </section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <nav class="wyd">
+        <a href="workouth">Workout</a>
+        <a href="yoga">Yoga</a>
+        <a href="recipe">Diet</a>
+    </nav><br>
+    <br>
+    <br>
+    <br>
+
+  
+  <br>
+  <br> 
+  <br>     
+<h1 style="text-align: center;margin-top:2rem;">TOP 10 <span style="color:red;">YOGA</span>
+</h1>
+        <section>
+            <div class="blog">
+                <div class="container">
+                    <div class="owl-carousel owl-theme blog-post">
+                        <div class="blog-content" data-aos="fade-right" data-aos-delay="200">
+                            <img class="y1" src="/images/tadasana.jpg" alt="post-1">
+                            <div class="blog-title">
+                                <h3 style="margin-left: -1.3rem;">Tadasana</h3>
+                                <button class="btn btn-blog"><a href="tadasana">Read more</a></button>
+                                <span>1 minutes</span>
+                            </div>
+                        </div>
+                        <div class="blog-content" data-aos="fade-in" data-aos-delay="200">
+                            <img class="y2" src="../images/vrkasana.jpg" alt="post-1">
+                            <div class="blog-title">
+                                <h3 style="margin-left: -1.3rem;">Vrksasana</h3>
+                                <button class="btn btn-blog"><a href="vraksasana">Read more</a></button>
+                                <span>3 minutes</span>
+                            </div>
+                        </div>
+                        <div class="blog-content" data-aos="fade-left" data-aos-delay="200">
+                            <img class="y3" src="./images/trikonasana.jpg" alt="post-1">
+                            <div class="blog-title">
+                                <h3 style="margin-left: -1.3rem;">Trikonasana</h3>
+                                <button class="btn btn-blog">Read more</button>
+                                <span>8 minutes</span>
+                            </div>
+                        </div>
+                        <div class="blog-content" data-aos="fade-right" data-aos-delay="200">
+                            <img class="y4" src="./images/virbhadrasana.jpg" alt="post-1">
+                            <div class="blog-title">
+                                <h3 style="margin-left: -1.3rem;">Virabhadrasana</h3>
+                                <button class="btn btn-blog">Read more</button>
+                                <span>10 minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </section>
+        <section>
+            <div class="blog">
+                <div class="container">
+                    <div class="owl-carousel owl-theme blog-post">
+                        <div class="blog-content" data-aos="fade-right" data-aos-delay="200">
+                            <img class="y5" src="/images/pach.jpg" alt="post-1">
+                            <div class="blog-title">
+                                <h3 style="margin-left: -1.3rem;">Paschimottanasana</h3>
+                                <button class="btn btn-blog"><a href="./cprogram.html">Read more</a></button>
+                                <span>1 minutes</span>
+                            </div>
+                        </div>
+                        <div class="blog-content" data-aos="fade-in" data-aos-delay="200">
+                            <img class="y6" src="/images/Setubandhasana.jpg" alt="post-1">
+                            <div class="blog-title">
+                               <h3 style="margin-left: -1.3rem;">Setubandhasana</h3>
+                                <button class="btn btn-blog">Read more</button>
+                                <span>3 minutes</span>
+                            </div>
+                        </div>
+                        <div class="blog-content" data-aos="fade-left" data-aos-delay="200">
+                            <img class="y7" src="./images/balasana.jpg" alt="post-1">
+                            <div class="blog-title">
+                               <h3 style="margin-left: -1.3rem;">Balasana</h3>
+                                <button class="btn btn-blog">Read more</button>
+                                <span>8 minutes</span>
+                            </div>
+                        </div>
+                        <div class="blog-content" data-aos="fade-right" data-aos-delay="200">
+                            <img class="y8" src="./images/savasana.jpg" alt="post-1">
+                            <div class="blog-title">
+                                <h3 style="margin-left: -1.3rem;">Savasana</h3>
+                                <button class="btn btn-blog">Read more</button>
+                                <span>10 minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        
+              </section>
+              <br>
+              <br>
+              <section>
+
+                <h2 style="font-size: 35px;">OUR BASIC<span style="color:red;"> YOGA</span></h2>
+                
+                            <div class="demo">
+  <div class="container" data-aos="fade-up" data-aos-delay="200">
+    <div class="row">
+      <div id="testimonial-slider" class="owl-carousel">
+        <div class="testimonial">
+          
+          <div class="testimonial-content">
+            <div class="pic">
+              <img src="images/byg.jpg" alt="">
+            </div>
+            <h3 class="name" style="color:black;">Basic Yoga</h3>
+            
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <div class="pic">
+              <img src="images/kyg.jpg" alt="">
+            </div>
+            <h3 class="name" style="color:black;">Kundalini Yoga</h3>
+          
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <div class="pic">
+              <img src="images/adyg.jpg" alt="">
+            </div>
+            <h3 class="name" style="color:black;">Advance Yoga</h3>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <div class="pic">
+              <img src="images/iyg.jpg" alt="">
+            </div>
+            <h3 class="name" style="color:black;">Iyenger Yoga</h3>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <div class="pic">
+              <img src="images/byg.jpg" alt="">
+            </div>
+            <h3 class="name" style="color:black;">Basic Yoga</h3>
+            
+          </div>
+        </div>
+                <div class="testimonial">
+    
+          <div class="testimonial-content">
+            <div class="pic">
+               <img src="images/kyg.jpg" alt="">
+            </div>
+            <h3 class="name" style="color:black;">Kundalini Yoga</h3>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+              </section>
+<br>
+<br>
+<br>
+
+    <!-- --------------------------- Footer ---------------------------------------- -->
+<body class="footer-body">
+    <footer>
+        <div class="footer-content">
+            <div class="footer-content" data-aos="fade-right" data-aos-delay="200">
+            
+                <h3>Follow Us</h3>
+                <h4>On Social Media</h4>
+                
+                <div class="links"align="center">
+                  <a1 href="#"><i class="fab fa-facebook-f"></i></a1>
+                    <a2 href="#"><i class="fab fa-twitter"></i></a2>
+                    <a3 href="#"><i class="fab fa-instagram"></i></a3>
+                    <a4 href="#"><i class="fab fa-youtube"></i></a4>
+                </div>
+                </div>
+                
+        <div class="footer-bottom">
+            <h4 style="color:#838b8b;"> Copyright ©2024 All rights are reserved | 
+             </h4>
+     </div>
+     
+                
+    </footer>
+</body>
+    <!-- -------------x------------- Footer --------------------x------------------- -->
+
+    <!-- Jquery Library file -->
+    <script src="./js/Jquery3.4.1.min.js"></script>
+
+    <!-- --------- Owl-Carousel js ------------------->
+    <script src="./js/owl.carousel.min.js"></script>
+
+    <!-- ------------ AOS js Library  ------------------------- -->
+    <script src="./js/aos.js"></script>
+
+    <!-- Custom Javascript file -->
+    <script src="./js/main.js"></script>
+</body>
+</section>
+</html>

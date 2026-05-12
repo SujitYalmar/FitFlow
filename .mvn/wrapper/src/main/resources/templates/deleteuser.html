@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete User</title>
+	<link rel="stylesheet" type="text/css" href="/css/deleteprofile.css">
+
+</head>
+<body  class="background-profile-update">
+  <section>
+    <!--<form action="/deleteUser" method="post">
+        <input type="hidden" name="id" value="${user.id}"> <!-- Replace with the actual user ID 
+        <button type="submit">Delete User</button>
+    </form>-->
+	
+	<form th:action="@{/deleteUser}" th:object="${user}" method="post">
+		<h1>Close Account permanatly</h1>
+		<input type="hidden" name="id" th:value="${user.id}"> <!-- Replace with the actual user ID -->
+		<button type="submit" class="button1">Close</button>
+	</form>
+</section>
+</body>
+</html>
