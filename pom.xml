@@ -71,6 +71,13 @@
 	</dependencies>
 
 	<build>
+		<sourceDirectory>.mvn/wrapper/src/main/java</sourceDirectory>
+		<testSourceDirectory>.mvn/wrapper/src/test/java</testSourceDirectory>
+		<resources>
+			<resource>
+				<directory>.mvn/wrapper/src/main/resources</directory>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

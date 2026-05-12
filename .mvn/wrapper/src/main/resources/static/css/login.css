@@ -1,114 +1,111 @@
-.background{
-    width: 430px;
-    height: 520px;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    left: 50%;
-    top: 50%;
+.background {
+    display: none;
 }
-.background .shape{
-    height: 200px;
-    width: 200px;
-    position: absolute;
-    border-radius: 50%;
+
+form {
+    width: min(420px, calc(100% - 2rem));
+    min-height: 0;
+    background: rgba(255, 255, 255, 0.94);
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: clamp(2rem, 8vh, 5rem) auto clamp(2rem, 8vh, 5rem) clamp(1rem, 8vw, 8rem);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.42);
+    box-shadow: 0 24px 70px rgba(3, 14, 18, 0.28);
+    padding: clamp(1.5rem, 4vw, 2.4rem);
 }
-.shape:first-child{
-    background: linear-gradient(
-        #1845ad,
-        #23a2f6
-    );
-    left: -80px;
-    top: -80px;
-}
-.shape:last-child{
-    background: linear-gradient(
-        to right,
-        #ff512f,
-        #f09819
-    );
-    right: -30px;
-    bottom: -80px;
-}
-form{
-    height: 520px;
-    width: 400px;
-    background-color: rgba(255,255,255,0.13);
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 20%;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255,255,255,0.1);
-    box-shadow: 0 0 40px rgba(8,7,16,0.6);
-    padding: 50px 35px;
-}
-form *{
-    font-family: 'Poppins',sans-serif;
-    color: #ffffff;
-    letter-spacing: 0.5px;
+
+form * {
+    font-family: 'Poppins', sans-serif;
+    color: #17212b;
+    letter-spacing: 0;
     outline: none;
     border: none;
 }
-form h4{
-    font-size: 32px;
-    font-weight: 500;
-    line-height: 42px;
-   text-align: center;
+
+form h4 {
+    font-size: clamp(1.8rem, 4vw, 2.35rem);
+    font-weight: 800;
+    line-height: 1.1;
+    text-align: left;
+    margin-bottom: 1.5rem;
 }
 
-label{
+label {
     display: block;
-    margin-top: 30px;
-    font-size: 16px;
-    font-weight: 500;
+    margin-top: 1rem;
+    color: #334155;
+    font-size: 0.94rem;
+    font-weight: 700;
 }
-input{
+
+input {
     display: block;
     height: 50px;
     width: 100%;
-    background-color: rgba(255,255,255,0.07);
-    border-radius: 3px;
-    padding: 0 10px;
-    margin-top: 8px;
-    font-size: 14px;
-    font-weight: 300;
+    background-color: #f6f8fb;
+    border: 1px solid #dbe5ee;
+    border-radius: 8px;
+    padding: 0 0.9rem;
+    margin-top: 0.45rem;
+    color: #17212b;
+    font-size: 0.98rem;
+    font-weight: 500;
 }
-::placeholder{
-    color: #e5e5e5;
+
+input:focus {
+    border-color: #107d66;
+    box-shadow: 0 0 0 4px rgba(16, 125, 102, 0.14);
 }
-.button1{
-    margin-top: 50px;
+
+::placeholder {
+    color: #8a97a8;
+}
+
+.button1 {
+    margin-top: 1.5rem;
     width: 100%;
-    background-color: #ffffff;
-    color: #080710;
-    padding: 15px 0;
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 5px;
+    background-color: #107d66;
+    color: #ffffff;
+    padding: 0.9rem 0;
+    font-size: 1rem;
+    font-weight: 800;
+    border-radius: 8px;
     cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
-.social{
-  margin-top: 20px;
-  display: flex;
+
+.button1:hover {
+    background-color: #075f4c;
+    transform: translateY(-1px);
 }
-.social div{
-  background: red;
-  width: 150px;
-  border-radius: 3px;
-  padding: 5px 10px 10px 5px;
-  background-color: rgba(255,255,255,0.27);
-  color: #eaf0fb;
-  text-align: center;
+
+.social {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
 }
-.social div:hover{
-  background-color: rgba(255,255,255,0.47);
+
+.social div {
+    width: auto;
+    border-radius: 8px;
+    padding: 0.7rem;
+    background-color: #eef7f1;
+    color: #075f4c;
+    text-align: center;
+    font-weight: 700;
 }
-.social .fb{
-  margin-left: 25px;
+
+.social div:hover {
+    background-color: #dff1e7;
 }
-.social i{
-  margin-right: 4px;
+
+.social a,
+.social i {
+    color: #075f4c;
 }
 .sub{
 	max-height: 0px;
@@ -129,7 +126,19 @@ input{
 				transition: max-height 0.5s;
 		}
 		body{
-		    background-color: #080710;
+		    background-color: #f6f8fb;
 		}
+
+@media (max-width: 991px) {
+    form {
+        margin: 2rem auto;
+    }
+}
+
+@media (max-width: 520px) {
+    .social {
+        grid-template-columns: 1fr;
+    }
+}
 	
 		

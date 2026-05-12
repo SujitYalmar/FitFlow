@@ -42,7 +42,7 @@ public class WorkoutController {
         // Retrieve the logged-in user's email from Spring Security
         String userEmail = authentication.getName(); // or from a custom user object, if available
         model.addAttribute("userEmail", userEmail); // Pass email to Thymeleaf
-        return "addworkout"; // Thymeleaf template name
+        return "addWorkout"; // Thymeleaf template name
     }
 
     // Create workout

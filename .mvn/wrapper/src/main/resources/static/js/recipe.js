@@ -24,37 +24,21 @@ const getRecipes = async () => {
     const div = document.createElement("div");
     div.setAttribute("class", "recipe-row");
 
-    const divideLine = document.createElement("div");
-    divideLine.setAttribute("class", "divider");
-    const section = document.createElement("section");
-    section.setAttribute("class", "section");
-
-    section.innerHTML = `
-      <h5 class="center-align teal-text food-title">${info.title}</h5>
-      <div class="col s12 m8 offset-m2 l6 offset-l3">
-        <div class="card-panel blue-grey lighten-5 z-depth-1 food-card">
-          <div class="row valign-wrapper">
-            <div class="col s3">
-              <img src="${info.image}" alt="" class="circle responsive-img">
-            </div>
-            <div class="col s10">
-              <span class="black-text">
-                ${info.summary}
-              </span>
-              <p>Prep Time: <b>${info.readyInMinutes} minutes</b></p>
-              <p>Make this many servings: <b>${info.servings} servings</b></p>
-              <p>Total Calories(kcal) Per Serving: <b>${info.nutrition.nutrients[0].amount}</b></p>
-              <p>Carbohydrates(g) Per Serving: <b>${info.nutrition.nutrients[3].amount}</b></p>
-              <p>Fat(g) Per Serving: <b>${info.nutrition.nutrients[1].amount}</b></p>
-              <p>Protein(g) Per Serving: <b>${info.nutrition.nutrients[8].amount}</b></p>
-              <p>Recipe Link: <a href="${info.sourceUrl}">${info.sourceUrl}</a></p>
-            </div>
-          </div>
+    div.innerHTML = `
+      <div class="ff-result-layout">
+        <img src="${info.image}" alt="${info.title}">
+        <div>
+          <h3>${info.title}</h3>
+          ${info.summary}
+          <p>Prep time: <b>${info.readyInMinutes} minutes</b></p>
+          <p>Servings: <b>${info.servings}</b></p>
+          <p>Calories per serving: <b>${info.nutrition.nutrients[0].amount}</b></p>
+          <p>Carbs: <b>${info.nutrition.nutrients[3].amount}g</b> | Fat: <b>${info.nutrition.nutrients[1].amount}g</b> | Protein: <b>${info.nutrition.nutrients[8].amount}g</b></p>
+          <p><a href="${info.sourceUrl}" target="_blank" rel="noopener">Open recipe</a></p>
         </div>
       </div>
     `;
 
-    div.append(divideLine, section);
     holder.append(div);
   }
 }
@@ -75,7 +59,7 @@ const getFood = async () => {
 
   for (let info of recipeData.foods) {
     const div = document.createElement("div");
-    div.setAttribute("class", "row");
+    div.setAttribute("class", "food-result");
 
     // Use `description` for food name instead of `lowercaseDescription`
     const foodName = info.description || "No name available"; 
@@ -87,13 +71,12 @@ const getFood = async () => {
     const carbs = info.foodNutrients.find(nutrient => nutrient.nutrientName === "Carbohydrate, by difference")?.value || "N/A";
 
     div.innerHTML = `
-      <div class="col s6 offset-s3">
-        <div class="card-panel blue-grey lighten-5">
-          <h3 class="food-title">${foodName}</h3>
-          <h6>${calories} Calories per serving</h6>
-          <p>${protein} g of Protein per serving</p>
-          <p>${fat} g of Fat per serving</p>
-          <p>${carbs} g of Carbohydrates per serving</p>
+      <div class="ff-result-layout">
+        <div></div>
+        <div>
+          <h3>${foodName}</h3>
+          <p><b>${calories}</b> calories per serving</p>
+          <p>${protein}g protein | ${fat}g fat | ${carbs}g carbs</p>
         </div>
       </div>
     `;

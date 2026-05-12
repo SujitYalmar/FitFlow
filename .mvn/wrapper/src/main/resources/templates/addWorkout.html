@@ -1,146 +1,47 @@
 <!DOCTYPE html>
-<html>
-<section>	
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="base::layout(~{::section})">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Add Workout</title>
-    <style>
-        /* General body styling */
-        body {
-            font-family: 'Arial', sans-serif;
-           background-color: lightcyan;
-            margin: 0;
-            padding: 0;
-            height: 100vh; /* Full height */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Form container styling */
-        .form-container {
-            background-color: #ffffff;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 400px;
-            height: 80%; /* Takes up most of the screen but not the full height */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        /* Form header */
-        h1 {
-            font-size: 1.6rem;
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        /* Label styling */
-        label {
-            font-size: 1rem;
-            margin-bottom: 8px;
-            display: block;
-            color: #7f8c8d;
-        }
-
-        /* Input fields styling */
-        input[type="text"],
-        input[type="date"],
-        input[type="number"],
-        select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 12px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 1rem;
-            box-sizing: border-box;
-            transition: border-color 0.3s ease;
-        }
-
-        input[type="text"]:focus,
-        input[type="date"]:focus,
-        input[type="number"]:focus,
-        select:focus {
-            border-color: #3498db;
-            outline: none;
-        }
-
-        /* Button styling */
-        button {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 12px;
-            font-size: 1rem;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            width: 100%;
-        }
-
-        button:hover {
-            background-color: #2980b9;
-        }
-
-        /* Ensure the form container doesn't overflow */
-        .form-container {
-            overflow: hidden;
-        }
-
-        /* Hide the extra inputs or unnecessary spacing */
-        input[type="hidden"] {
-            display: none;
-        }
-
-        /* Responsive design */
-        @media (max-width: 480px) {
-            .form-container {
-                max-width: 90%;
-            }
-
-            h1 {
-                font-size: 1.4rem;
-            }
-
-            button {
-                font-size: 0.9rem;
-            }
-        }
-    </style>
 </head>
 <body>
-    <div class="form-container">
-        <h1>Add New Workout</h1>
-        <form action="/workouts" method="post">
-            <label for="description">Workout Name:</label>
-            <input type="text" id="description" name="description" placeholder="Enter workout name" required>
+<section>
+    <section class="ff-form-page">
+        <div class="ff-form-copy">
+            <p class="ff-kicker">Workout log</p>
+            <h1>Add a workout</h1>
+            <p>Keep the form short and record the details that matter for progress.</p>
+        </div>
+        <form class="ff-form-card" action="/workouts" method="post">
+            <label for="description">Workout name</label>
+            <input type="text" id="description" name="description" placeholder="Morning strength" required>
 
-            <label for="date">Workout Date:</label>
+            <label for="date">Date</label>
             <input type="date" id="date" name="date" required>
 
-            <label for="duration">Duration (minutes):</label>
-            <input type="number" id="duration" name="duration" placeholder="Enter duration in minutes" required>
+            <div class="ff-form-row">
+                <div>
+                    <label for="duration">Duration</label>
+                    <input type="number" id="duration" name="duration" placeholder="30" required>
+                </div>
+                <div>
+                    <label for="caloriesBurned">Calories</label>
+                    <input type="number" id="caloriesBurned" name="caloriesBurned" placeholder="240" required>
+                </div>
+            </div>
 
-            <label for="runSteps">Steps (if running):</label>
-            <input type="number" id="runSteps" name="runSteps" placeholder="Enter number of steps" required>
+            <label for="runSteps">Steps</label>
+            <input type="number" id="runSteps" name="runSteps" placeholder="3000" required>
 
-            <label for="caloriesBurned">Calories Burned:</label>
-            <input type="number" id="caloriesBurned" name="caloriesBurned" placeholder="Enter calories burned" required>
-
-            <label for="running">Running (Yes/No):</label>
+            <label for="running">Running</label>
             <select id="running" name="running" required>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
             </select>
 
-            <label for="gymExercises">Gym Exercises:</label>
+            <label for="gymExercises">Main exercise</label>
             <select id="gymExercises" name="gymExercises" required>
                 <option value="Squats">Squats</option>
                 <option value="Bench Press">Bench Press</option>
@@ -149,12 +50,11 @@
                 <option value="Lunges">Lunges</option>
             </select>
 
-            <!-- Hidden field for the user's email -->
             <input type="hidden" name="userEmail" th:value="${userEmail}">
-
-            <button type="submit">Submit Workout</button>
+            <button class="ff-btn ff-btn-primary" type="submit">Save Workout</button>
+            <a class="ff-form-link" href="/workouts">Back to workouts</a>
         </form>
-    </div>
-</body>
+    </section>
 </section>
+</body>
 </html>
