@@ -1,415 +1,116 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
-	th:replace="base::layout(~{::section})">
+      th:replace="base::layout(~{::section})">
 <head>
-<meta charset="ISO-8859-1">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Insert title here</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitFlow</title>
 </head>
 <body>
-	<section>
-		    <link rel="stylesheet" href="./css/all.css">
+<section>
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="/css/styles.css">
 
-		<!--Google Font-->
-		    <link rel="preconnect" href="https://fonts.gstatic.com">
-		    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
-		    <!-- --------- Owl-Carousel ------------------->
-		    <link rel="stylesheet" href="./css/owl.carousel.min.css">
-		    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
+    <th:block th:if="${user==NULL}">
+        <section class="ff-hero">
+            <div class="ff-hero-copy">
+                <p class="ff-kicker">Fitness, food, and progress in one place</p>
+                <h1>Build a routine that actually fits your day.</h1>
+                <p class="ff-lead">Track workouts, calculate health metrics, discover yoga routines, and keep your fitness goals visible without digging through clutter.</p>
+                <div class="ff-actions">
+                    <a class="ff-btn ff-btn-primary" href="register">Start Free</a>
+                    <a class="ff-btn ff-btn-secondary" href="signin">I already have an account</a>
+                </div>
+                <div class="ff-stats" aria-label="FitFlow highlights">
+                    <div><strong>3</strong><span>training paths</span></div>
+                    <div><strong>24/7</strong><span>progress access</span></div>
+                    <div><strong>5+</strong><span>health tools</span></div>
+                </div>
+            </div>
+            <div class="ff-hero-media">
+                <img src="/images/run.jpg" alt="Runner training outdoors">
+                <div class="ff-floating-card">
+                    <span>Today</span>
+                    <strong>420 kcal</strong>
+                    <small>Workout goal on track</small>
+                </div>
+            </div>
+        </section>
 
-		    <!-- ------------ AOS Library ------------------------- -->
-		    <link rel="stylesheet" href="./css/aos.css">
+        <section class="ff-section">
+            <div class="ff-section-heading">
+                <p class="ff-kicker">Why FitFlow</p>
+                <h2>Everything is organized around action.</h2>
+            </div>
+            <div class="ff-feature-grid">
+                <article class="ff-feature-card">
+                    <img src="/images/byg.jpg" alt="Fitness tracking">
+                    <h3>Track progress clearly</h3>
+                    <p>Log workouts, calories, duration, and steps so every session becomes part of a useful progress history.</p>
+                </article>
+                <article class="ff-feature-card">
+                    <img src="/images/yg1.jpg" alt="Yoga practice">
+                    <h3>Mix workouts and yoga</h3>
+                    <p>Move between gym routines, bodyweight workouts, and yoga without losing your place.</p>
+                </article>
+                <article class="ff-feature-card">
+                    <img src="/images/health.JPG" alt="Nutrition and health">
+                    <h3>Use smarter health tools</h3>
+                    <p>Calculate BMI, BMR, calories, and nutrition needs from a dashboard that is easier to scan.</p>
+                </article>
+            </div>
+        </section>
 
-		    <!-- Custom Style   -->
-		    <link rel="stylesheet" href="./css/style.css">
+        <section class="ff-section ff-steps-band">
+            <div class="ff-section-heading">
+                <p class="ff-kicker">How it works</p>
+                <h2>From first login to a better routine.</h2>
+            </div>
+            <div class="ff-steps">
+                <div><span>01</span><h3>Create your profile</h3><p>Add your fitness goal and basic details.</p></div>
+                <div><span>02</span><h3>Choose your activity</h3><p>Pick workouts, yoga, gym plans, or diet tools.</p></div>
+                <div><span>03</span><h3>Review progress</h3><p>Use reports to understand what is working.</p></div>
+            </div>
+        </section>
+    </th:block>
 
-			    <link rel="stylesheet" href="./css/all.css">
+    <th:block th:if="${user!=NULL}">
+        <section class="ff-dashboard-hero">
+            <div>
+                <p class="ff-kicker">Welcome back</p>
+                <h1>Choose your next training path.</h1>
+                <p class="ff-lead">Start with a guided workout category, then keep your activity report updated as you move.</p>
+            </div>
+        </section>
 
-			<!--Google Font-->
-			    <link rel="preconnect" href="https://fonts.gstatic.com">
-			    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
-			    <!-- --------- Owl-Carousel ------------------->
-			    <link rel="stylesheet" href="./css/owl.carousel.min.css">
-			    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
+        <section class="ff-section ff-choice-grid">
+            <a href="index3" class="ff-choice-card">
+                <i class="fas fa-male" aria-hidden="true"></i>
+                <span>Male Plan</span>
+                <small>Strength, core, and conditioning workouts.</small>
+            </a>
+            <a href="index3" class="ff-choice-card">
+                <i class="fas fa-female" aria-hidden="true"></i>
+                <span>Female Plan</span>
+                <small>Flexible routines for endurance and tone.</small>
+            </a>
+            <a href="home1" class="ff-choice-card">
+                <i class="fas fa-chart-line" aria-hidden="true"></i>
+                <span>Progress</span>
+                <small>Review calculators, diet tools, and activity.</small>
+            </a>
+        </section>
+    </th:block>
 
-			    <!-- ------------ AOS Library ------------------------- -->
-			    <link rel="stylesheet" href="./css/aos.css">
+    <footer class="ff-footer">
+        <h3>FitFlow</h3>
+        <p>Train with clarity. Track with confidence.</p>
+    </footer>
 
-			    <!-- Custom Style   -->
-			    <link rel="stylesheet" href="./css/style.css">
-			   
-
-		<th:block th:if="${user==NULL}">
-			<link rel="stylesheet" type="text/css" href="/css/styles.css">
-			<style>			
-				* {
-				    margin: 0;
-				    padding: 0;
-				    box-sizing: border-box;
-				}
-
-				body {
-				    font-family: 'Poppins', sans-serif;
-				    background-color: #f7f7f7;
-				    color: #333;
-				    margin: 0;
-				    padding: 0;
-				}
-
-				header {
-				    background-color: #4facfe;
-				    color: white;
-				    padding: 30px 0;
-				    text-align: center;
-				    font-size: 2.5rem;
-				}
-
-				.section1 {
-				    margin: 20px auto;
-				    padding: 30px;
-				    width: 80%;
-				    max-width: 1200px;
-				}
-
-				.content {
-				    display: flex;
-				    align-items: center;
-				    justify-content: space-between;
-				    gap: 20px;
-				    flex-wrap: wrap; /* Ensures it is responsive */
-				}
-
-				/* Flex Layout for Image and Text */
-				.content div {
-				    background-color: white;
-				    padding: 20px;
-				    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-				    border-radius: 12px;
-				    width: 100%; /* Full width for mobile view */
-				    text-align: left;
-				    display: flex;
-				    flex-direction: row; /* Keeps image on left and text on right */
-				    align-items: center;
-				    justify-content: space-between;
-				}
-
-				.content .text {
-				    flex: 1;
-				    margin-right: 20px;
-				}
-
-				.content .text h3 {
-				    font-size: 1.5rem;
-				    margin-bottom: 15px;
-				    color: #333;
-				    font-weight: 600;
-				}
-
-				.content .text p {
-				    color: #666;
-				    font-size: 1.1rem;
-				    line-height: 1.8;
-				    text-align: justify;
-				}
-
-				.content img {
-				    width: 40%; /* Set image to 45% width */
-				    height: auto;
-				    border-radius: 10px;
-				    object-fit: cover; /* Ensures image fits nicely */
-				}
-
-				.h {
-					font-family: 'Playfair Display', serif;  /* Playfair Display for an elegant, italic look */
-					font-size: 3rem;                        /* Large font size */
-					font-style: italic;                     /* Italicized text */
-				    font-weight: 700;                    /* Bold text */
-				    color: #333;                         /* Dark gray color for readability */
-				    text-align: center;                  /* Center the text */
-				    text-transform: uppercase;           /* Transform text to uppercase for emphasis */
-				    letter-spacing: 2px;                 /* Add some space between letters */
-				    margin-top: 50px;                    /* Space above the heading */
-				    margin-bottom: 20px;                 /* Space below the heading */
-				    padding: 10px 0;                     /* Vertical padding */
-				    background: linear-gradient(to right, #4facfe, #00f2fe);  /* Gradient background */
-				    -webkit-background-clip: text;       /* Apply gradient to text only */
-				    color: transparent;                  /* Text becomes transparent to show the gradient */
-				    
-				}
-
-
-				/* Responsiveness */
-				@media (max-width: 768px) {
-				    .content {
-				        flex-direction: column;
-				        align-items: center;
-				        text-align: center;
-				    }
-
-				    .content .text {
-				        margin-right: 0;
-				        margin-bottom: 20px;
-				    }
-
-				    .content img {
-				        width: 80%; /* Image width adjusts for mobile */
-				        margin-bottom: 20px;
-				    }
-				}
-
-				/* Hover Effect for Card */
-				.content div:hover {
-				    transform: translateY(-10px);
-				    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-				    transition: all 0.3s ease;
-				}
-
-				/* Button Styling */
-				.btn {
-				    display: inline-block;
-				    padding: 12px 25px;
-				    background-color: #ff1493;
-				    color: white;
-				    font-size: 1.2rem;
-				    font-weight: 600;
-				    border-radius: 5px;
-				    text-decoration: none;
-				    transition: background-color 0.3s ease;
-				    margin-top: 20px;
-				    text-align: center;
-				}
-
-				.btn:hover {
-				    background-color: #7b68ee;
-				}
-				p {
-				    font-family: 'Poppins', sans-serif;  /* Choose a clean, modern font */
-				    font-size: 1.1rem;  /* Set font size to a readable level */
-				    color: #333;  /* Dark color for good readability */
-				    line-height: 1.8;  /* Increase line height for better readability */
-				    margin-bottom: 20px;  /* Add spacing between paragraphs */
-				    text-align: justify;  /* Justify text for a more structured look */
-				    letter-spacing: 0.5px;  /* Slight spacing between letters for clarity */
-				    padding: 0 10px;  /* Add some padding for a comfortable text margin */
-				    text-indent: 20px;  /* Add indentation to the first line of each paragraph */
-				}
-
-				/* Hover effect for paragraphs to make them interactive */
-				@import url('http//fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900');
-				*
-				{
-				    
-				    font-family: 'Poppins',sans-serif;
-				}
-                      
-			</style>
-
-		<div class="backgroun">
-			<section class="bgvideo">
-				<video controls autoplay loop muted>
-				    <source src="/videos/bgvideo.mp4" type="video/mp4">
-				    Your browser does not support the video tag.
-				</video>
-
-			       <h2><span2>NOTHING </span2><br><span3>WILL WORK</span3><br><span1>UNLESS </span1><br><span>YOU DO!</span></h2>
-
-			   </section>
-			   <section class="site-title">
-			           <div class="site-background" data-aos="fade-up" data-aos-delay="100">
-			            <!-- <button class="btn" style="margin-top: 25rem;"><a href="Explore">Explore more</a></button>-->  
-			           </div>
-			       </section>
-
-
-				       <section class="section1">
-				           <h2 class="h">Why Fitness Are Important</h2>
-				           <div class="content">
-				               <div>
-				                   <img src="images/byg.jpg" alt="Health Awareness">
-				                   
-				                <p> Fitness apps can collect and analyze a wide variety of metrics, such as your physical activity levels, 
-									calories burned, and distance traveled. This data allows users to visually track progress over time with detailed charts, graphs, and performance summaries. 
-									By having access to this data, users can set measurable and realistic goals, such as increasing steps per day or improving running speed..</p>
-				               </div>
-				               <div>
-				                   <img src="images/bg11.jpg" alt="Goal Setting">
-				                  
-				                   <p>Fitness apps allow you to set personalized goals, such as daily steps, 
-									calorie burns, or workouts. These goals serve as motivation, 
-									making it easier to stay on track with your fitness journey.</p>
-				               </div>
-				               <div>
-				                   <img src="images/id12.jpg" alt="Motivation">
-				                   
-				                   <p>With features like challenges, and progress reports, 
-									fitness apps keep you motivated and accountable to your goals, ensuring you maintain a 
-									consistent fitness routine.</p>
-				               </div>
-				           </div>
-				       
-
-				     
-				           <h2 class="h">How It's Work</h2>
-				           <div class="content">
-				               <div>
-				                   <img src="images/run.jpg" alt="Data Collection">
-				                   
-				                   <p>application collect data from your client. 
-									This includes steps, calories burned, heart rate, sleep patterns, and more.
-									 The data is then analyzed to provide insights into your overall health.</p>
-				               </div>
-				               <div>
-				                   <img src="images/health.jpg" alt="Data Analysis">
-				                   
-				                   <p>The app analyzes collected data and provides meaningful insights like calories burned, 
-									active minutes, and progress toward goals. This helps you track improvements and make adjustments to your 
-									workout routine make trainer more informatic about fitness.</p>
-				               </div>
-				               <div>
-				                   <img src="images/yg1.jpg" alt="Behavioral Feedback">
-				                 
-				                   <p>Application encourage healthy behavior,
-									 like reminding you to move after prolonged sitting or congratulating you when you achieve your goals.
-									  This feedback helps you stay motivated and engaged.</p>
-				               </div>
-				           </div>
-						   </section>
-
-				   </th:block>
-				   <section>
-				   <th:block th:if="${user!=NULL}">
-					    
-
-					<style type="text/css">
-					   .img{
-					    background: url('images/id1.jpg');
-					    
-					    height: 100vh;
-					    background-position: center;
-					    background-repeat: no-repeat;
-					    background-size: cover;
-					    
-					    
-					   } 
-					   h2{
-					    margin-top: 3rem;
-					   }
-					.container{
-					    
-					    background: linear-gradient(to right, #4facfe 0%,#00f2fe 100%);
-					    height:30rem;
-					    width:25%;
-					    margin-top: -40rem;
-					    margin-bottom: 10rem;
-					    margin-left: 30rem;
-					    margin-right: 42rem;
-					    border-radius:20px;
-					}
-					.male{
-					     background: linear-gradient(to right, #ff1493 0%,#7b68ee 100%);
-					    border-radius:20px;
-					    height:10vh;
-					    margin-top: 4rem;
-					    margin-left: 3rem;
-					    margin-right: 3rem;
-					}
-					.male i{
-					    margin-top: 0.3rem;
-					    font-size: 60px;
-					    margin-left: 5rem;
-					}
-					.female{
-					     background: linear-gradient(to right, #ff1493 0%,#7b68ee 100%);
-					    border-radius:20px;
-					    height:11vh;
-					    margin-top: 4.5rem;
-					    margin-left: 3rem;
-					    margin-right: 3rem;
-					}
-					.female i{
-					    margin-top: 0.6rem;
-					    font-size: 60px;
-					    margin-left: 5rem;
-					}
-					input[type=radio]{
-					   height:1em;
-					   margin-left:1rem; 
-					}
-					.male h3{
-					    color: black;
-					    margin-left: 4rem;
-					    margin-top: -2.3rem;
-					}
-					.female h3{
-					    color: black;
-					    margin-left: 5.4rem;
-					    margin-top: -2.3rem;
-					}
-					.r2{
-					    margin-top: -6rem;
-					}
-
-					</style>
-
-					  <form name="contact">
-					    <div class="img">
-					</div>
-					<div class="container">
-					    <h2>Select Gender</h2>
-					    <div class="male">
-					        <a href="index3" style="color: black;"><i class="fas fa-male"></i></a>
-					        
-					         <a href="index3" style="color: black;"> <h3>Male</h3> </a>
-					    </div>
-					    <div class="female">
-					        <a href="index3" style="color: black;"><i class="fas fa-female"></i></a>
-					      
-					       <a href="index3" style="color: black;"> <h3>Female</h3></a>
-					        </div>
-
-					    
-					</div>
-					</form>
- 
-					</th:block>	   
-					</section>
-					<body class="footer-body">
-					    <footer>
-					        <div class="footer-content">
-					            <div class="footer-content" data-aos="fade-right" data-aos-delay="200">
-					            
-					                <h3>Follow Us</h3>
-					                <h4>On Social Media</h4>
-					                
-					                <div class="links"align="center">
-					                  <a1 href="#"><i class="fab fa-facebook-f"></i></a1>
-					                    <a2 href="#"><i class="fab fa-twitter"></i></a2>
-					                    <a3 href="#"><i class="fab fa-instagram"></i></a3>
-					                    <a4 href="#"><i class="fab fa-youtube"></i></a4>
-					                </div>
-					                </div>
-					                
-					        <div class="footer-bottom">
-					            <h4 style="color:#838b8b;"> Copyright ©2024 All rights are reserved |
-					             </h4>
-					     </div>
-					     
-					                
-					    </footer>
-					</body>
-					<script src="./js/Jquery3.4.1.min.js"></script>
-
-					<!-- --------- Owl-Carousel js ------------------->
-					<script src="./js/owl.carousel.min.js"></script>
-
-					<!-- ------------ AOS js Library  ------------------------- -->
-					<script src="./js/aos.js"></script>
-
-					<!-- Custom Javascript file -->
-					<script src="./js/main.js"></script>
-    </section>
-
+    <script src="./js/Jquery3.4.1.min.js"></script>
+    <script src="./js/owl.carousel.min.js"></script>
+    <script src="./js/aos.js"></script>
+    <script src="./js/main.js"></script>
+</section>
 </body>
 </html>
