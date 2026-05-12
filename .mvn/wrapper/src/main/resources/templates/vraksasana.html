@@ -1,182 +1,54 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
-    th:replace="base::layout(~{::section})">
-	<section>
-
+      th:replace="base::layout(~{::section})">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fitness webapplication</title>
-
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="./css/all.css">
-
-<!--Google Font-->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
-    <!-- --------- Owl-Carousel ------------------->
-    <link rel="stylesheet" href="./css/owl.carousel.min.css">
-    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
-
-    <!-- ------------ AOS Library ------------------------- -->
-    <link rel="stylesheet" href="./css/aos.css">
-
-    <!-- Custom Style   -->
-    <link rel="stylesheet" href="./css/stylef.css">
-   
-    
-    <style type="text/css">
-      .hs-responsive-embed-youtube {
-position: relative;
-padding-bottom: 30.25%; /* 16:9 Aspect Ratio */
-padding-top: 25px;
-}
-.hs-responsive-embed-youtube iframe {
-position: absolute;
-width: 50%!important;
-height: 80%!important;
-margin-left: 20rem;
-margin-right: 25rem;
-}
-.para h2{
-   font-family: var(--Livvic);
-   font-size: 35px;
-
-}
-.para .p1{
-  font-size: 25px;
-  margin-left: -54rem;
-  color: black;
-   font-family: var(--Livvic);
-  padding-top: 0rem;
-
-}
-.para .p2{
-  font-size: 25px;
-  margin-left: -58rem;
-  color: black;
-   font-family: var(--Livvic);
-  padding-top: 0rem;
-
-}
-.para .p3{
-  font-size: 25px;
-  margin-left: -55rem;
-  color: black;
-   font-family: var(--Livvic);
-  padding-top: 0rem;
-
-}
-.para h4{
-  font-size: 20px;
-  margin-left: 6rem;
-  margin-right: 6rem;
-  font-family: var(--Livvic);
-  color: black;
-}
-.para h4 span{
-  
-  color: red;
-}
-.para h4 span1{
-  
-  color: red;
-  font-size: 40px;
-}
-    </style>
-    
-
+    <title>Vraksasana</title>
 </head>
-
 <body>
+<section>
+    <section class="ff-detail-hero">
+        <a class="ff-back-link" href="/yoga">Back to Yoga</a>
+        <p class="ff-kicker">Yoga pose</p>
+        <h1>Vraksasana</h1>
+        <p>Tree pose develops balance, leg strength, confidence, and calm focus.</p>
+    </section>
 
-    <!-- ----------------------------  Navigation ---------------------------------------------- -->
+    <section class="ff-detail-layout">
+        <div class="ff-video-card">
+            <iframe src="https://www.youtube.com/embed/hgtfNp8KywM?si=E30xCb_2KoCc9uLG"
+                    title="Vraksasana tutorial"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+        </div>
 
+        <article class="ff-detail-card">
+            <h2>How to do Vraksasana</h2>
+            <p>Stand tall, breathe steadily, and use a wall or chair nearby if you need support while practicing balance.</p>
 
-    <!----------------------------- Main Site Section ------------------------------>
+            <h2>Steps</h2>
+            <ol>
+                <li>Stand straight and balance firmly on your left leg.</li>
+                <li>Lift your right leg and bend your right knee.</li>
+                <li>Place your right foot against the inside of your left thigh with toes pointing downward.</li>
+                <li>Join your palms at chest level, then lift your arms overhead.</li>
+                <li>Hold the position while breathing deeply.</li>
+                <li>Lower your arms, release your leg, and repeat on the other side.</li>
+            </ol>
 
-    <main>
-		      <div class="hs-responsive-embed-youtube" data-aos="fade-right" data-aos-delay="200"><iframe width="560" height="315" src="https://www.youtube.com/embed/hgtfNp8KywM?si=E30xCb_2KoCc9uLG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-      <div class="para" data-aos="fade-left" data-aos-delay="200">
-<h2 data-aos="fade-left" data-aos-delay="200">Vraksasana</h2><br>
-<br>
-<h3 class="p1" data-aos="fade-left" data-aos-delay="200">How to do Vraksasana</h3>
-<br>
-<br>
-<h3 class="p2" data-aos="fade-left" data-aos-delay="200">Vraksasana steps</h3>
-<br>
-<h4 data-aos="fade-left" data-aos-delay="200">
-    
-    <span>1.</span> Stand straight.<br><br>
-    <span>2.</span> Balance firmly on your left leg and lift your right leg. Bend your right leg at the knee.<br><br>
-    <span>3.</span> Now, place your right foot against the inside of your left thigh. Make sure the toes of your right foot facing downward.<br><br>
-    <span>4.</span> Join your palms in prayer at your chest level. Now, lift your arms over your head till your hands are stretched upward.<br><br>
-    <span>5.</span> Hold the position while breathing deeply.<br><br> 
-    <span>6.</span> Lower your arms to chest level and then separate your palms. <br><br>
-    <span>7.</span> Straighten your right leg and stand erect again.<br><br> 
-    <span>8.</span> Repeat the posture with your right leg. <br><br>
+            <h2>Benefits</h2>
+            <ul>
+                <li>Improves balance and stability in the legs.</li>
+                <li>Strengthens feet, hips, and the standing leg.</li>
+                <li>Supports pelvic stability and posture.</li>
+                <li>Builds confidence and focus.</li>
+            </ul>
 
-</h4>
-<br><br>
-<h3 class="p3" data-aos="fade-left" data-aos-delay="200">Benifits of Vraksasana</h3>
-
-<h4 data-aos="fade-left" data-aos-delay="200">
-    
-    <span1>.</span1> Improves balance and stability in the legs<br>
-    <span1>.</span1> On a metaphysical level, helps one to achieve balance in other aspects of life<br>
-    <span1>.</span1> Strengthens the ligaments and tendon of the feet<br>
-    <span1>.</span1> Strengthens and tones the entire standing leg, up to the buttocks<br>
-    <span1>.</span1> Assists the body in establishing pelvic stability<br>
-    <span1>.</span1> Strengthen the bones of the hips and legs due to the weight-bearing nature of the pose<br>
-    <span1>.</span1> Builds self-confidence and esteem<br>
-
-</h4>
-</div>
-    </main>
-
-    <!---------------x------------- Main Site Section ---------------x-------------->
-
-
-
-    <!-- --------------------------- Footer ---------------------------------------- -->
-<body class="footer-body">
-    <footer>
-        <div class="footer-content">
-            <div class="footer-content" data-aos="fade-right" data-aos-delay="200">
-            
-                <h3>Follow Us</h3>
-                <h4>On Social Media</h4>
-                
-                <div class="links"align="center">
-                  <a1 href="#"><i class="fab fa-facebook-f"></i></a1>
-                    <a2 href="#"><i class="fab fa-twitter"></i></a2>
-                    <a3 href="#"><i class="fab fa-instagram"></i></a3>
-                    <a4 href="#"><i class="fab fa-youtube"></i></a4>
-                </div>
-                </div>
-                
-        <div class="footer-bottom">
-            <h4 style="color:#838b8b;"> Copyright ©2021 All rights are reserved |
-             </h4>
-     </div>
-     
-                
-    </footer>
+            <a class="ff-btn ff-btn-primary" href="/yoga">Back to Yoga</a>
+        </article>
+    </section>
+</section>
 </body>
-    <!-- -------------x------------- Footer --------------------x------------------- -->
-
-    <!-- Jquery Library file -->
-    <script src="./js/Jquery3.4.1.min.js"></script>
-
-    <!-- --------- Owl-Carousel js ------------------->
-    <script src="./js/owl.carousel.min.js"></script>
-
-    <!-- ------------ AOS js Library  ------------------------- -->
-    <script src="./js/aos.js"></script>
-
-    <!-- Custom Javascript file -->
-    <script src="./js/main.js"></script>
-</body>
-	</section>
 </html>

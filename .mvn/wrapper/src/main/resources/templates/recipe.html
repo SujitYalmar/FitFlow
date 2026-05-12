@@ -1,192 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:replace="base::layout(~{::section})">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="stylesheet" href="style.css">
-  <title>Fitness</title>
-      <!-- Font Awesome Icons -->
-      <link rel="stylesheet" href="./css/all.css">
-
-  <!--Google Font-->
-      <link rel="preconnect" href="https://fonts.gstatic.com">
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
-      <!-- --------- Owl-Carousel ------------------->
-      <link rel="stylesheet" href="./css/owl.carousel.min.css">
-      <link rel="stylesheet" href="./css/owl.theme.default.min.css">
-
-      <!-- ------------ AOS Library ------------------------- -->
-      <link rel="stylesheet" href="./css/aos.css">
-
-
-  <style type="text/css">
-    /* Global Styles */
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f8f9fa;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      flex-direction: column;
-    }
-
-    .page-title {
-      font-size: 2.5rem;
-      font-weight: bold;
-      color: #333;
-      text-align: center;
-    }
-
-    .page-title span {
-      color: #FF6F61; /* Red Accent Color */
-    }
-	/* Back Button Styling */
-	.bck-btn {
-	  position: fixed;
-	  top: 20px;
-	  left: 20px;
-	  font-size: 25px;
-	  z-index: 1000; /* Ensures the button stays above other content */
-	}
-
-	.bck-btn a {
-	  font-size: 1.2rem;
-	  color: #333;
-	  text-decoration: none;
-	  transition: color 0.3s ease;
-	}
-
-	.bck-btn a:hover {
-	  color: #FF6F61;
-	}
-
-	.bck-btn i {
-	  margin-right: 8px;
-	}
-    .container {
-      width: 90%;
-      max-width: 1100px;
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-
-    /* Button Styling */
-    .btn {
-      margin: 1rem;
-      background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
-      border-radius: 50px;
-      padding: 2px 30px;
-      font-size: 16px;
-      color: white;
-      border: none;
-      cursor: pointer;
-      text-transform: uppercase;
-	  text-align: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s ease-in-out;
-    }
-
-    .btn:hover {
-      background: transparent;
-      border: 1px solid #FF6F61;
-      color: #FF6F61;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Button Container Styling (Flexbox for Centering and Spacing) */
-    .button-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px; /* Space between buttons */
-    }
-
-    /* Search Input Styling */
-    .input-field input {
-      font-size: 1rem;
-      border-radius: 5px;
-      padding: 10px;
-      border: 1px solid #ddd;
-      width: 100%;
-      transition: border 0.3s ease;
-    }
-
-    .input-field input:focus {
-      border: 1px solid #FF6F61;
-    }
-
-    .row {
-      margin-bottom: 30px;
-    }
-
-    /* Adjust the spacing for mobile */
-    @media (max-width: 600px) {
-      .container {
-        width: 95%;
-      }
-
-      .btn {
-        width: 100%;
-        font-size: 14px;
-        padding: 10px;
-      }
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Search</title>
 </head>
-<body style="background-color: lightcyan;">
-  <!-- Back Button -->
-  <div class="bck-btn">
-  <a href="home1">
-  <i class="fa fa-arrow-circle-left"></i>Back</a>
-  </div>
-
-  <!-- Main Content -->
-  <div class="container">
-    <h1 class="page-title">
-      Find foods that <span>fit</span> your diet!
-    </h1>
-
-    <div class="row">
-      <div class="col s12 m6">
-        <h6>Search Details</h6>
-        <div class="input-field">
-          <input type="text" id="recipe" class="validate" placeholder="Enter recipe details">
+<body>
+<section>
+    <section class="ff-page-header">
+        <div>
+            <p class="ff-kicker">Diet tab</p>
+            <h1>Find food that fits.</h1>
+            <p>Search recipes or specific foods and review nutrition details in one focused view.</p>
         </div>
-      </div>
+        <a class="ff-btn ff-btn-secondary" href="home1">Back to Progress</a>
+    </section>
 
-      <div class="col s12 m6">
-        <h6>Search Specific Food</h6>
-        <div class="input-field">
-          <input type="text" id="food" class="validate" placeholder="Enter food name">
+    <section class="ff-section">
+        <div class="ff-search-panel">
+            <div class="ff-field">
+                <label for="recipe">Recipe details</label>
+                <input type="text" id="recipe" placeholder="Example: high protein breakfast">
+                <button class="ff-btn ff-btn-primary" id="recipeBtn" type="button">Find Recipes</button>
+            </div>
+            <div class="ff-field">
+                <label for="food">Specific food</label>
+                <input type="text" id="food" placeholder="Example: banana">
+                <button class="ff-btn ff-btn-secondary" id="foodBtn" type="button">Find Food</button>
+            </div>
         </div>
-      </div>
-    </div>
+        <div class="holder ff-results"></div>
+    </section>
 
-    <!-- Button Container with Flexbox for Alignment -->
-    <div class="button-container">
-      <button class="btn" id="recipeBtn">Get All Details</button>
-      <button class="btn" id="foodBtn">Get Food Items</button>
-    </div>
-
-    <div class="holder"></div>
-  </div>
-
-  <!-- jQuery and Materialize JS -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="js/recipe.js"></script>
+    <script src="/js/recipe.js"></script>
+</section>
 </body>
 </html>

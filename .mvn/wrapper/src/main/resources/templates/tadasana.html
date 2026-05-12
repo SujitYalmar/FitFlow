@@ -1,183 +1,54 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
-    th:replace="base::layout(~{::section})">
-	<section>
+      th:replace="base::layout(~{::section})">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fitness webapplication</title>
-
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="./css/all.css">
-
-<!--Google Font-->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
-    <!-- --------- Owl-Carousel ------------------->
-    <link rel="stylesheet" href="./css/owl.carousel.min.css">
-    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
-
-    <!-- ------------ AOS Library ------------------------- -->
-    <link rel="stylesheet" href="./css/aos.css">
-
-    <!-- Custom Style   -->
-    <link rel="stylesheet" href="./css/stylef.css">
-   
-    
-    <style type="text/css">
-      .hs-responsive-embed-youtube {
-position: relative;
-padding-bottom: 30.25%; /* 16:9 Aspect Ratio */
-padding-top: 25px;
-}
-.hs-responsive-embed-youtube iframe {
-position: absolute;
-width: 50%!important;
-height: 80%!important;
-margin-left: 20rem;
-margin-right: 25rem;
-}
-.para h2{
-   font-family: var(--Livvic);
-   font-size: 35px;
-
-}
-.para .p1{
-  font-size: 25px;
-  margin-left: -54rem;
-  color: black;
-   font-family: var(--Livvic);
-  padding-top: 0rem;
-
-}
-.para .p2{
-  font-size: 25px;
-  margin-left: -58rem;
-  color: black;
-   font-family: var(--Livvic);
-  padding-top: 0rem;
-
-}
-.para .p3{
-  font-size: 25px;
-  margin-left: -55rem;
-  color: black;
-   font-family: var(--Livvic);
-  padding-top: 0rem;
-
-}
-.para h4{
-  font-size: 20px;
-  margin-left: 6rem;
-  margin-right: 6rem;
-  font-family: var(--Livvic);
-  color: black;
-}
-.para h4 span{
-  
-  color: red;
-}
-.para h4 span1{
-  
-  color: red;
-  font-size: 40px;
-}
-    </style>
-    
-
+    <title>Tadasana</title>
 </head>
-
 <body>
+<section>
+    <section class="ff-detail-hero">
+        <a class="ff-back-link" href="/yoga">Back to Yoga</a>
+        <p class="ff-kicker">Yoga pose</p>
+        <h1>Tadasana</h1>
+        <p>Mountain pose builds posture awareness, steady breathing, and full-body alignment.</p>
+    </section>
 
-    <!-- ----------------------------  Navigation ---------------------------------------------- -->
+    <section class="ff-detail-layout">
+        <div class="ff-video-card">
+            <iframe src="https://www.youtube.com/embed/TmnVRKygyk0"
+                    title="Tadasana tutorial"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+        </div>
 
+        <article class="ff-detail-card">
+            <h2>How to do Tadasana</h2>
+            <p>Safety, comfort, and awareness are the most important things to consider. Focus on one to three alignment points at a time, then add more as the pose becomes familiar.</p>
 
-    <main>
-      <div class="hs-responsive-embed-youtube" data-aos="fade-right" data-aos-delay="200"><iframe width="560" height="315" src="https://www.youtube.com/embed/TmnVRKygyk0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-      <div class="para" data-aos="fade-left" data-aos-delay="200">
-<h2 data-aos="fade-left" data-aos-delay="200">Tadasana</h2><br>
-<br>
-<h3 class="p1" data-aos="fade-left" data-aos-delay="200">How to do Tadasana</h3>
-<br>
-<h4 data-aos="fade-left" data-aos-delay="200">Safety, comfort, and awareness are the most important things to consider when practicing yoga asanas.
+            <h2>Steps</h2>
+            <ol>
+                <li>Stand with your big toes touching and your heels slightly apart.</li>
+                <li>Distribute pressure evenly between your big toes, little toes, and heels.</li>
+                <li>Lift your arches and press into the outer edges of your feet.</li>
+                <li>Keep your knees slightly bent and lift your kneecaps gently.</li>
+                <li>Bring your pelvis into a neutral position and activate your core.</li>
+                <li>Elongate your spine, broaden your chest, and relax your arms by your sides.</li>
+                <li>Take slow, deep breaths and hold for up to one minute.</li>
+            </ol>
 
-If you feel overwhelmed by the many Tadasana alignment principles, select one to three body parts to focus on. Once you’ve got these down, choose a few new body parts to target.</h4>
-<br>
-<br>
-<h3 class="p2" data-aos="fade-left" data-aos-delay="200">Tadasana steps</h3>
-<br>
-<h4 data-aos="fade-left" data-aos-delay="200">
-    <span>1.</span> Stand with your big toes touching and your heels slightly apart, so the outer edges of your feet are parallel.<br><br>
-    <span>2.</span> Distribute pressure evenly between your big toes, little toes, and heels.<br><br>
-    <span>3.</span> Lift your arches and press into the outer edges of your feet.<br><br>
-    <span>4.</span> Keep your knees slightly bent.<br><br>
-    <span>5.</span> Engage your quadriceps and lift your kneecaps upward slightly.<br><br>
-    <span>6.</span> Bring your pelvis into a neutral position, maintaining the natural curve of your low back.<br><br>
-    <span>7.</span> Activate your core muscles.<br><br>
-    <span>8.</span> Elongate your spine and broaden your chest.<br><br>
-    <span>9.</span> Draw your shoulder blades together and down the back.<br><br>
-    <span>10.</span> Relax your arms by your sides with your palms facing forward.<br><br>
-    <span>11.</span> Spread your hands and activate your fingers.<br><br>
-    <span>12.</span> Keep your belly relaxed and take slow, deep breaths.<br><br>
-    <span>13.</span> Hold this position for up to 1 minute. <br><br>
-</h4>
-<br><br>
-<h3 class="p3" data-aos="fade-left" data-aos-delay="200">Benifits of tadasana</h3>
+            <h2>Benefits</h2>
+            <ul>
+                <li>Improves flexibility and posture.</li>
+                <li>Builds strength and body awareness.</li>
+                <li>Supports healthy breathing patterns.</li>
+                <li>Helps with stress relief and balance.</li>
+            </ul>
 
-<h4 data-aos="fade-left" data-aos-delay="200">
-    <span1 data-aos="fade-left" data-aos-delay="200">.</span1> improving flexibility<br>
-    <span1 data-aos="fade-left" data-aos-delay="200">.</span1> relieving pain<br>
-    <span1 data-aos="fade-left" data-aos-delay="200">.</span1> building strength<br>
-    <span1 data-aos="fade-left" data-aos-delay="200">.</span1> healthy weight management<br>
-    <span1 data-aos="fade-left" data-aos-delay="200">.</span1> stress relief<br>
-    <span1 data-aos="fade-left" data-aos-delay="200">.</span1> improved breathing patterns<br>
-</h4>
-</div>
-    </main>
-
-    <!---------------x------------- Main Site Section ---------------x-------------->
-
-
-
-    <!-- --------------------------- Footer ---------------------------------------- -->
-<body class="footer-body">
-    <footer>
-        <div class="footer-content">
-            <div class="footer-content" data-aos="fade-right" data-aos-delay="200">
-            
-                <h3>Follow Us</h3>
-                <h4>On Social Media</h4>
-                
-                <div class="links"align="center">
-                  <a1 href="#"><i class="fab fa-facebook-f"></i></a1>
-                    <a2 href="#"><i class="fab fa-twitter"></i></a2>
-                    <a3 href="#"><i class="fab fa-instagram"></i></a3>
-                    <a4 href="#"><i class="fab fa-youtube"></i></a4>
-                </div>
-                </div>
-                
-        <div class="footer-bottom">
-            <h4 style="color:#838b8b;"> Copyright ©2021 All rights are reserved | made by Shweta Wakchaure
-             </h4>
-     </div>
-     
-                
-    </footer>
-</body>
-    <!-- -------------x------------- Footer --------------------x------------------- -->
-
-    <!-- Jquery Library file -->
-    <script src="./js/Jquery3.4.1.min.js"></script>
-
-    <!-- --------- Owl-Carousel js ------------------->
-    <script src="./js/owl.carousel.min.js"></script>
-
-    <!-- ------------ AOS js Library  ------------------------- -->
-    <script src="./js/aos.js"></script>
-
-    <!-- Custom Javascript file -->
-    <script src="./js/main.js"></script>
-</body>
+            <a class="ff-btn ff-btn-primary" href="/yoga">Back to Yoga</a>
+        </article>
+    </section>
 </section>
+</body>
 </html>

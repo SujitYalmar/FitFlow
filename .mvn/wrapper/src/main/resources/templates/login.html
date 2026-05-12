@@ -1,68 +1,41 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
-	th:replace="base::layout(~{::section})">
+      th:replace="base::layout(~{::section})">
 <head>
-    <meta charset="ISO-8859-1">
-    <title>Login Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
 </head>
 <body>
-	
-	<section>
-		<style>
-			.bgvideo
-			{
-			    margin-top: 5rem;
-			    margin-left: 51rem!important;
-			    position: absolute;
-			    width:40%;
-			    height: 55%;
-			    overflow: hidden;
+<section class="auth-page">
+    <div class="auth-copy">
+        <p class="ff-kicker">Welcome back</p>
+        <h1>Log in and keep your momentum.</h1>
+        <p>Track workouts, review progress, and jump back into your fitness plan.</p>
+    </div>
 
-			}
-			.backgroun{
-			    background-image: url('/images/bg5.jpg');
-			    background-size: cover;
-			    width: 0%!important;
-			    height: 620px;
-			}
+    <form class="auth-card" action="userLogin" method="post">
+        <h2>Login</h2>
+        <th:block th:if="${param.error}">
+            <p class="auth-message error">[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]</p>
+        </th:block>
+        <th:block th:if="${param.logout}">
+            <p class="auth-message success">Logout successfully</p>
+        </th:block>
 
+        <label for="username">Email</label>
+        <input id="username" type="email" placeholder="you@example.com" name="username" required>
 
-		</style>
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="Enter password" name="password" required>
 
-		<link rel="stylesheet" type="text/css" href="/css/styles.css">
-		<div class="backgroun">
-			<section class="bgvideo">
-				<video controls autoplay loop muted>
-				    <source src="/videos/bgvideo.mp4" type="video/mp4">
-				    Your browser does not support the video tag.
-				</video>
+        <button class="button1" type="submit">Log In</button>
 
-			       <h2><span2>NOTHING </span2><br><span3>WILL WORK</span3><br><span1>UNLESS </span1><br><span>YOU DO!</span></h2>
-
-			   </section>
-				  
-    <section>
-		<link rel="stylesheet" type="text/css" href="/css/login.css">
-        <div class="background">
+        <div class="auth-links">
+            <a href="forgot-password">Forgot password?</a>
+            <a href="register">Create account</a>
         </div>
-        <form action="userLogin" method="post">
-                 <h4>Login</h4>
-			<th:block th:if="${param.error}">
-			    <p class="text-center text-danger fs-5">[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]</p>
-			</th:block>
-			<th:block th:if="${param.logout}">
-			    <p class="text-center text-success fs-5">Logout Successfully</p>
-			</th:block>
-            <label for="username">Username</label>
-            <input type="text" placeholder="Email" name="username">
-            <label for="password">Password</label>
-            <input type="password" placeholder="Password" name="password">
-            <button class="button1">Log In</button>
-            <div class="social">
-                <div class="go"><i class="fab fa-google"></i><a href="forgot-password">Forgot password</a></div>
-                <div class="fb"><i class="fab fa-facebook"></i> <a href="register">sign up</a></div>
-            </div>
-        </form>
-    </section>
+    </form>
+</section>
 </body>
 </html>

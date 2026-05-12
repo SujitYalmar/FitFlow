@@ -1,130 +1,60 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
-	th:replace="base::layout(~{::section})">
+      th:replace="base::layout(~{::section})">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
 </head>
 <body>
-	<section>
-		<style>
-			.bgvideo
-			{
-			    margin-top: 5rem;
-			    margin-left: 51rem!important;
-			    position: absolute;
-			    width:40%;
-			    height: 55%;
-			    overflow: hidden;
+<section class="auth-page register-page">
+    <div class="auth-copy">
+        <p class="ff-kicker">Join FitFlow</p>
+        <h1>Create a profile that fits your goal.</h1>
+        <p>Set your goal once, then use the same account for workouts, yoga, reports, and food tools.</p>
+    </div>
 
-			}
-			.backgroun{
-			    background-image: url('/images/bg5.jpg');
-			    background-size: cover;
-			    width: 0%!important;
-			    height: 620px;
-			}
+    <form class="auth-card auth-card-large" action="saveUser" method="post">
+        <h2>Register</h2>
+        <th:block th:if="${session.msg}">
+            <p class="auth-message success">[[${session.msg}]]</p>
+            <th:block th:text="${@userServiceImpl.removeSessionMessage()}"></th:block>
+        </th:block>
 
+        <label for="name">Full name</label>
+        <input id="name" type="text" name="name" placeholder="Your name" required>
 
-		</style>
-		<div class="backgroun">
-			<section class="bgvideo">
-				<video controls autoplay loop muted>
-				    <source src="/videos/bgvideo.mp4" type="video/mp4">
-				    Your browser does not support the video tag.
-				</video>
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" placeholder="you@example.com" required>
 
-			       <h2><span2>NOTHING </span2><br><span3>WILL WORK</span3><br><span1>UNLESS </span1><br><span>YOU DO!</span></h2>
+        <label for="mobileNo">Mobile number</label>
+        <input id="mobileNo" type="tel" name="mobileNo" pattern="\d{10,}" placeholder="10 digit mobile number" required>
 
-			   </section>
+        <label for="password">Password</label>
+        <div class="password-field">
+            <input type="password" id="password" name="password" required
+                   minlength="8"
+                   pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                   title="Password must be at least 8 characters long, contain uppercase, lowercase, number, and special character.">
+            <button type="button" onclick="togglePasswordVisibility()" aria-label="Show or hide password">Show</button>
+        </div>
 
+        <label for="fitness_goal">Fitness goal</label>
+        <input id="fitness_goal" type="text" name="fitness_goal" placeholder="Build strength, lose weight, improve mobility..." required>
 
+        <button type="submit" class="button1">Create Account</button>
+        <p class="auth-footnote">Already have an account? <a href="/signin">Sign in</a></p>
+    </form>
 
-		<link rel="stylesheet" type="text/css" href="/css/register.css">
-		<div class="background">
-			<link rel="stylesheet" type="text/css" href="/css/styles.css">
-		</div>				
-                 <form action="saveUser" method="post">
-					<h4>Register</h4>
-									<th:block th:if="${session.msg}">
-										<p class="text-center text-success fs-4">[[${session.msg}]]</p>
-										<th:block th:text="${@userServiceImpl.removeSessionMessage()}"></th:block>
-
-									</th:block>
-
-									<label>Enter Full Name</label> <input type="text" name="name"
-										 required>
-								<div>
-									<label>Enter Email</label> <input type="email" name="email"
-							 placeholder="example@example.com" required>
-								</div>
-
-								<div >
-									<label>Enter Mobile Number</label> <input type="tel"
-										name="mobileNo" pattern="\d{10,}" placeholder="Enter at least 10 digits"  required>
-								</div>
-
-								<div>
-								    <label for="password">Enter Password</label>
-								    <div style="position: relative;">
-								        <input type="password" id="password" name="password" required 
-								               minlength="8" 
-								               pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" 
-								               title="Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character (@$!%*?&)."
-								               onblur="validatePassword()">
-								        <span id="eye-icon" onclick="togglePasswordVisibility()" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;">
-								            👁️
-								        </span>
-								    </div>
-								</div>
-
-								<div >
-									<label>Enter fitness Goal</label> <input type="text"
-										name="fitness_goal"  required>
-								</div>
-
-								
-								<button type="submit" class="button1">Submit</button>
-								<div class="social">
-
-								<p>Go to the <a href="/signin" style="color: rgb(0, 128, 255)!important;">signin</a></div></p>
-								</div>
-							</form>
-						
-							<script>
-							function validatePassword() {
-							    var password = document.getElementById("password").value;
-
-							    // Check if the password meets the required pattern
-							    var passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-
-							    if (!passwordPattern.test(password)) {
-							        alert("Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character (@$!%*?&).");
-							        return false; // Prevent form submission if password doesn't match the pattern
-							    }
-
-							    // Allow form submission if password is valid
-							    return true;
-							}
-
-							function togglePasswordVisibility() {
-							    var passwordField = document.getElementById("password");
-							    var eyeIcon = document.getElementById("eye-icon");
-
-							    // Toggle password visibility
-							    if (passwordField.type === "password") {
-							        passwordField.type = "text";
-							        eyeIcon.textContent = "🙈"; // Change icon to a closed eye when visible
-							    } else {
-							        passwordField.type = "password";
-							        eyeIcon.textContent = "👁️"; // Change icon to an open eye when hidden
-							    }
-							}
-							</script>
-
-					
-
-
-	</section>
+    <script>
+        function togglePasswordVisibility() {
+            const passwordField = document.getElementById("password");
+            const button = event.currentTarget;
+            const isHidden = passwordField.type === "password";
+            passwordField.type = isHidden ? "text" : "password";
+            button.textContent = isHidden ? "Hide" : "Show";
+        }
+    </script>
+</section>
 </body>
 </html>
