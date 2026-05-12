@@ -1,178 +1,70 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
-	th:replace="base::layout(~{::section})">
+      th:replace="base::layout(~{::section})">
 <head>
-<meta charset="ISO-8859-1">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workout Report</title>
 </head>
-<section>
 <body>
-	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-	<link
-		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-		rel="stylesheet"
-		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-		crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="/css/styles.css">
+<section>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-	    <link rel="stylesheet" href="./css/all.css">
-		<link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <section class="ff-page-header">
+        <div>
+            <p class="ff-kicker">Workout report</p>
+            <h1>Your activity snapshot.</h1>
+            <p>Compare duration and calories burned across your logged workouts.</p>
+        </div>
+        <a class="ff-btn ff-btn-secondary" href="workouts">Manage Workouts</a>
+    </section>
 
-	<!--Google Font-->
-	    <link rel="preconnect" href="https://fonts.gstatic.com">
-	    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
-	    <!-- --------- Owl-Carousel ------------------->
-	    <link rel="stylesheet" href="./css/owl.carousel.min.css">
-	    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
+    <section class="ff-section">
+        <div class="ff-report-card">
+            <canvas id="workoutChart"></canvas>
+        </div>
+    </section>
 
-	    <!-- ------------ AOS Library ------------------------- -->
-	    <link rel="stylesheet" href="./css/aos.css">
-		    <link rel="stylesheet" href="./css/all.css">
-
-		<!--Google Font-->
-		    <link rel="preconnect" href="https://fonts.gstatic.com">
-		    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
-		    <!-- --------- Owl-Carousel ------------------->
-		    <link rel="stylesheet" href="./css/owl.carousel.min.css">
-		    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
-
-		    <!-- ------------ AOS Library ------------------------- -->
-		    <link rel="stylesheet" href="./css/aos.css">
-
-		    <!-- Custom Style   -->
-		    <link rel="stylesheet" href="./css/style.css">
-		   
-
-
-	<style>
-	    /* Style for the chart container */
-	    .chart-container {
-	        width: 80%;           /* Set the width of the chart container */
-	        margin: 0 auto;       /* Center the chart container horizontally */
-	        padding: 20px;        /* Add padding for spacing */
-	        border: 1px solid #ddd; /* Optional: add a border around the chart */
-	        border-radius: 10px;  /* Optional: round the corners */
-	        background-color: #f9f9f9; /* Optional: background color */
-	    }
-
-	    /* Style for the chart itself */
-	    #workoutChart {
-	        width: 100% !important; /* Make the chart take up the full width of the container */
-	        height: 400px !important; /* Set the height of the chart */
-	    }
-
-	    /* General body styling */
-	    body {
-	        font-family: Arial, sans-serif; /* Choose a clean font */
-	        background-color: #f4f4f4;     /* Background color for the whole page */
-	        margin: 0;
-	        padding: 0;
-	    }
-
-	    h1 {
-	        text-align: center; /* Center the header */
-	        color: #333;
-	    }
-
-	    h2 {
-	        text-align: center; /* Center the sub-header */
-	        color: #444;
-	    }
-	</style>
-
-    <h1>Welcome</h1>
-
-    <h2>Your Workout Report</h2>
-    
-    <!-- Chart Container -->
-    <div class="chart-container">
-        <!-- Canvas for the Chart -->
-        <canvas id="workoutChart"></canvas>
-    </div>
-	    <!-- --------------------------- Footer ---------------------------------------- -->
-
-
-    <!-- Chart.js -->
     <script th:inline="javascript">
-        // Use Thymeleaf to inject Java lists directly into JavaScript arrays
-         workoutCalories = /*[[${calories}]]*/
-         workoutLabels = /*[[${workoutNames}]]*/
-         workoutDurations = /*[[${durations}]]*/
+        const workoutCalories = /*[[${calories}]]*/ [];
+        const workoutLabels = /*[[${workoutNames}]]*/ [];
+        const workoutDurations = /*[[${durations}]]*/ [];
 
         document.addEventListener('DOMContentLoaded', function () {
-            // Get the canvas context
             const ctx = document.getElementById('workoutChart').getContext('2d');
-
-            // Create the chart
-            const workoutChart = new Chart(ctx, {
-                type: 'bar', // Type of the chart (bar chart)
+            new Chart(ctx, {
+                type: 'bar',
                 data: {
-                    labels: workoutLabels,  // Workout names as labels
+                    labels: workoutLabels,
                     datasets: [{
                         label: 'Duration (minutes)',
-                        data: workoutDurations,  // Data for workout durations
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        borderWidth: 1
+                        data: workoutDurations,
+                        backgroundColor: 'rgba(16, 125, 102, 0.16)',
+                        borderColor: '#107d66',
+                        borderWidth: 2
                     }, {
                         label: 'Calories Burned',
-                        data: workoutCalories,  // Data for calories burned
-                        backgroundColor: 'rgba(153, 102, 255, 0.2)',
-                        borderColor: 'rgba(153, 102, 255, 1)',
-                        borderWidth: 1
+                        data: workoutCalories,
+                        backgroundColor: 'rgba(255, 138, 61, 0.18)',
+                        borderColor: '#ff8a3d',
+                        borderWidth: 2
                     }]
                 },
                 options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
                     scales: {
-                        y: {
-                            beginAtZero: true  // Start y-axis from zero
-                        }
+                        y: { beginAtZero: true }
                     }
                 }
             });
         });
     </script>
-	<body class="footer-body">
-	    <footer>
-	        <div class="footer-content">
-	            <div class="footer-content" data-aos="fade-right" data-aos-delay="200">
-	            
-	                <h3>Follow Us</h3>
-	                <h4>On Social Media</h4>
-	                
-	                <div class="links"align="center">
-	                  <a1 href="#"><i class="fab fa-facebook-f"></i></a1>
-	                    <a2 href="#"><i class="fab fa-twitter"></i></a2>
-	                    <a3 href="#"><i class="fab fa-instagram"></i></a3>
-	                    <a4 href="#"><i class="fab fa-youtube"></i></a4>
-	                </div>
-	                </div>
-	                
-	        <div class="footer-bottom">
-	            <h4 style="color:#838b8b;"> Copyright ©2024 All rights are reserved | 
-	             </h4>
-	     </div>
-	     
-	                
-	    </footer>
-	</body>
-	<!-- Jquery Library file -->
-	<script src="./js/Jquery3.4.1.min.js"></script>
 
-	<!-- --------- Owl-Carousel js ------------------->
-	<script src="./js/owl.carousel.min.js"></script>
-
-	<!-- ------------ AOS js Library  ------------------------- -->
-	<script src="./js/aos.js"></script>
-
-	<!-- Custom Javascript file -->
-	<script src="./js/main.js"></script>
-
-	 <script src="./js/home.js"></script>
-  <!-- -------------x------------- Footer --------------------x------------------- -->
-
-</body>
+    <footer class="ff-footer">
+        <h3>FitFlow</h3>
+        <p>Know what changed, then keep moving.</p>
+    </footer>
 </section>
+</body>
 </html>
